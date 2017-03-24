@@ -240,7 +240,7 @@ element.style {
     border-radius: 10px!important;
     word-spacing: 2px!important;
     max-width: 250px!important;
-    z-index: 2147483647!important;
+    z-index: 4!important;
     box-sizing: content box!important;
     line-height: 1.2!important;
     cursor: pointer!important;
@@ -266,7 +266,7 @@ element.style {
     border-radius: 10px!important;
     word-spacing: 2px!important;
     max-width: 250px!important;
-    z-index: 2147483647!important;
+    z-index: 4!important;
     box-sizing: content box!important;
     line-height: 1.2!important;
     cursor: pointer!important;
@@ -292,7 +292,7 @@ element.style {
     border-radius: 10px!important;
     word-spacing: 2px!important;
     max-width: 250px!important;
-    z-index: 2147483647!important;
+    z-index: 4!important;
     box-sizing: content box!important;
     line-height: 1.2!important;
     cursor: pointer!important;
