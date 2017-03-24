@@ -1,12 +1,12 @@
 function imageMapping(){
    var thisURL = window.location.href
    if (thisURL == "http://toolbox.igus.com/"){
-        document.getElementById("testing-2").style.visibility = 'visiable';
-        document.getElementById("testing-3").style.visibility = 'visiable';
+        document.getElementById("testing-2").style.display = 'block';
+        document.getElementById("testing-3").style.display = 'block';
      }
    else if (thisURL !== "http://toolbox.igus.com/"){
-       document.getElementById("testing-2").style.visibility = 'hidden';
-       document.getElementById("testing-3").style.visibility = 'hidden';
+       document.getElementById("testing-2").style.display = 'none';
+       document.getElementById("testing-3").style.display = 'none';
      }
 }
 
@@ -22,3 +22,8 @@ function imageMapping(){
  Hubs.onItemsLoaded = function() {
  imageMapping();
  }
+
+
+
+
+ 
