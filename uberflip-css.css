@@ -365,7 +365,16 @@ element.style {
         height: auto;
     }
 }
-
+    @media screen and (min-width: 1199px) {
+    .primary-logo{
+        display: none !important;
+    }
+    }
+        @media screen and (min-width: 1199px) {
+    .header-intro{
+        display: none !important;
+    }
+    }
 
 /* iglide sample request CTA */
 #hub-cta-69495 {
