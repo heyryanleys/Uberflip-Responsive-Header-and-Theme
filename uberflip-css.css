@@ -202,12 +202,10 @@ background-size: 100%;
 }
 
 /* Remove Made with Uberflip */
-.description-block .powered-by{
-    font-size: 0px;
-}
 
-.description-block .powered-by a img{
-    max-width: 0px;
+.powered-by{
+    display: none;
+    visibility: hidden;
 }
 
 /* Trying Slidein */
@@ -308,6 +306,7 @@ element.style {
 }
 
 
+
 @media screen and (min-width: 1450px){
     .overlay-2 {
     opacity:1;
@@ -331,6 +330,7 @@ element.style {
 
 }
 }
+
 
 	img[usemap] {
 		border: none;
@@ -381,6 +381,7 @@ element.style {
         display: none !important;
     }
     }
+
 
 /* iglide sample request CTA */
 #hub-cta-69495 {
