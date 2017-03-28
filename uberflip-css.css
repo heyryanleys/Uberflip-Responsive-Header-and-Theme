@@ -208,17 +208,18 @@ background-size: 100%;
     visibility: hidden;
 }
 
-/* Trying Slidein */
+/* Removing Pinterest Bug */
+.tile.single.pinterest img{
+    display: none;
+    visibility: hidden;
+}
+
+/* Left Binder Tab Navigation */
 @media screen and (min-width: 1200px) {
 element.style {
     background-color: rgb(206, 0, 88) !important;
     color: rgb(255, 255, 255) !important;
     left: -4px;
-}
-
-.tile.single.pinterest img{
-    display: none;
-    visibility: hidden;
 }
 
 .pushcrew-chicklet-position-tl {
@@ -299,19 +300,20 @@ element.style {
     top: 631px !important;
 }
 }
-/* Hero */
+
+/* Removing Default Capitalization for H1 Tags */
+h1{
+text-transform: none !important;
+}
+
+/* Top Banner Navigation */
 .large-header{
     z-index: 2;
     height: 400px;
 }
 
-h1{
-text-transform: none !important;
-}
-
-
 @media screen and (min-width: 1450px){
-    .overlay-2 {
+    .large-overlay {
     opacity:1;
     size: 100%;
     position:absolute;
@@ -323,7 +325,7 @@ text-transform: none !important;
 }
 
 @media screen and (min-width: 1200px) {
-    .overlay-3 {
+    .medium-overlay {
     opacity:1;
     size: 100%;
     position:absolute;
@@ -334,22 +336,14 @@ text-transform: none !important;
 }
 }
 
-
-	img[usemap] {
-		border: none;
-		height: auto;
-		max-width: none;
-		width: auto;
-	}
-
 @media screen and (max-width: 1199px) {
     .overlay{
         display: none !important;
     }
-    .overlay-2{
+    .large-overlay{
         display: none !important;
     }
-    .overlay-3{
+    .medium-overlay{
         display: none !important;
     }
     .pushcrew-chicklet-position-tl{
@@ -374,18 +368,22 @@ text-transform: none !important;
         height: auto;
     }
 }
-    @media screen and (min-width: 1199px) {
+
+@media screen and (min-width: 1199px) {
     .primary-logo{
         display: none !important;
     }
-    }
-        @media screen and (min-width: 1199px) {
     .header-intro{
         display: none !important;
     }
     }
 
-
+img[usemap] {
+  		border: none;
+  		height: auto;
+  		max-width: none;
+  		width: auto;
+  	}
 /* iglide sample request CTA */
 #hub-cta-69495 {
 background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDQwOGIyNjRkMTQucG5nJnZlcnNpb249MDAwMCZzaWc9NjEwMTQ1NjM5MDZhMjRlODAyNDRiMDZlNWQ5MTZmMTA%253D') !important;

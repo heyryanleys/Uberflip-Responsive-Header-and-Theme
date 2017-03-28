@@ -1,29 +1,23 @@
 function imageMapping(){
-   var thisURL = window.location.href
-   if (thisURL == "http://toolbox.igus.com/"){
-        document.getElementById("testing-2").style.display = 'block';
-        document.getElementById("testing-3").style.display = 'block';
-     }
-   else if (thisURL !== "http://toolbox.igus.com/"){
-       document.getElementById("testing-2").style.display = 'none';
-       document.getElementById("testing-3").style.display = 'none';
-     }
+    var thisURL = window.location.href
+    if (thisURL == "http://toolbox.igus.com/"){
+         document.getElementById("large-top-nav").style.display = 'block';
+         document.getElementById("medium-top-nav").style.display = 'block';
+      }
+    else if (thisURL !== "http://toolbox.igus.com/"){
+        document.getElementById("large-top-nav").style.display = 'none';
+        document.getElementById("medium-top-nav").style.display = 'none';
+      }
 }
 
+  Hubs.onLoad = function() {
+  imageMapping();
+  }
 
- Hubs.onLoad = function() {
- imageMapping();
- }
+  Hubs.onPageChange = function() {
+  imageMapping();
+  }
 
- Hubs.onPageChange = function() {
- imageMapping();
- }
-
- Hubs.onItemsLoaded = function() {
- imageMapping();
- }
-
-
-
-
- 
+  Hubs.onItemsLoaded = function() {
+  imageMapping();
+  }
