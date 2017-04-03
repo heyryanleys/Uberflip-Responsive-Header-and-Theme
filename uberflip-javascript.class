@@ -2,15 +2,11 @@
 /* Adds Header Navigation on Homepage Only */
 function imageMapping(){
     var thisURL = window.location.href
-    if (thisURL == "http://toolbox.igus.com/"){
+    if (window.location.href.indexOf("toolbox.igus.com/?vip=yes") > -1 || thisURL == "http://toolbox.igus.com/" ){
          document.getElementById("large-top-nav").style.display = 'block';
          document.getElementById("medium-top-nav").style.display = 'block';
       }
-    else if (window.location.href.indexOf("toolbox.igus.com/?vip=yes") > -1){
-         document.getElementById("large-top-nav").style.display = 'block';
-         document.getElementById("medium-top-nav").style.display = 'block';
-      }
-    else if (thisURL !== "http://toolbox.igus.com/"){
+    else {
         document.getElementById("large-top-nav").style.display = 'none';
         document.getElementById("medium-top-nav").style.display = 'none';
       }
@@ -25,7 +21,6 @@ function hideSlideIn(){
 
 /* Removes AddThis from Homepage (Not Currently Working) */
 function removeSocial(){
-
     var thisURL = window.location.href
     if (thisURL == "http://toolbox.igus.com/"){
          $('.addthis-smartlayers').css('display','none');
