@@ -25,20 +25,19 @@ function hideSlideIn(){
 
 /* Removes AddThis from Homepage (Not Currently Working) */
 function removeSocial(){
+
     var thisURL = window.location.href
     if (thisURL == "http://toolbox.igus.com/"){
-         $('.addthis-smartlayers-desktop').css('display','none');
-         $('.addthis-smartlayers-mobile').css('display','none');
+         $('.addthis-smartlayers').css('display','none');
       }
     else if (window.location.href.indexOf("toolbox.igus.com/?vip=yes") > -1){
-        $('.addthis-smartlayers-desktop').css('display','none');
-        $('.addthis-smartlayers-mobile').css('display','none');
+        $('.addthis-smartlayers').css('display','none');
       }
     else if (thisURL !== "http://toolbox.igus.com/"){
-         $('.addthis-smartlayers-desktop').css('display','block');
-         $('.addthis-smartlayers-mobile').css('display','block');
+         $('.addthis-smartlayers').css('display','block');
 
       }
+    setTimeout(function() { removeSocial() },3);
 }
 
 /* Modern Day Rick Roll (Will Delete Shortly) */
