@@ -1,4 +1,5 @@
 /* DO NOT EDIT -- Hub Permanent Styling -- DO NOT EDIT*/
+
 /* Changing Favorite Icon*/
 .tile .icon.star{
     position: absolute;
@@ -13,13 +14,16 @@
 /* Remove Made with Uberflip */
 
 .powered-by{
-    display: none;
+    visibility: hidden;
+}
+
+/* Hiding AddThis While Colors Change */
+.at4-share {
     visibility: hidden;
 }
 
 /* Removing Pinterest Bug */
 .tile.single.pinterest img{
-    display: none;
     visibility: hidden;
 }
 
