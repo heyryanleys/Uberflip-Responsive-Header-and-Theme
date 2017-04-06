@@ -4,6 +4,7 @@ function imageMapping(){
     if (window.location.href.indexOf("toolbox.igus.com/?") > -1 || thisURL == "http://toolbox.igus.com/" ){
          document.getElementById("large-top-nav").style.display = 'block';
          document.getElementById("medium-top-nav").style.display = 'block';
+
       }
     else {
         document.getElementById("large-top-nav").style.display = 'none';
@@ -71,7 +72,7 @@ Hubs.onLoad = function() {
       $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
     });
   /* Continuning VIP Paramater Across Links */
-  $('a').each(function() {
+  $('a, area').each(function() {
   var href = this.href;
   if (window.location.href.indexOf("vip=yes") > -1){
     href = href + '?vip=yes';
@@ -98,7 +99,7 @@ Hubs.onPageChange = function() {
       $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
     });
   /* Continuning VIP Paramater Across Links */
-  $('a').each(function() {
+  $('a, area').each(function() {
   var href = this.href;
   if (window.location.href.indexOf("vip=yes") > -1){
     href = href + '?vip=yes';
@@ -125,7 +126,7 @@ Hubs.onItemsLoaded = function() {
       $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
     });
   /* Continuning VIP Paramater Across Links */
-  $('a').each(function() {
+  $('a, area').each(function() {
   var href = this.href;
   if (window.location.href.indexOf("vip=yes") > -1){
     href = href + '?vip=yes';
