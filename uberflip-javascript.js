@@ -1,9 +1,7 @@
-<script>
-/* Adds Header Navigation on Homepage Only */
 /* Adds Header Navigation on Homepage Only */
 function imageMapping(){
     var thisURL = window.location.href
-    if (window.location.href.indexOf("toolbox.igus.com/?vip=yes") > -1 || thisURL == "http://toolbox.igus.com/" ){
+    if (window.location.href.indexOf("toolbox.igus.com/?") > -1 || thisURL == "http://toolbox.igus.com/" ){
          document.getElementById("large-top-nav").style.display = 'block';
          document.getElementById("medium-top-nav").style.display = 'block';
       }
@@ -26,7 +24,7 @@ function changeAddthis(){
     if (thisURL == "http://toolbox.igus.com/"){
          $('.addthis-smartlayers').css('display','none');
       }
-    else if (window.location.href.indexOf("toolbox.igus.com/?vip=yes") > -1){
+    else if (window.location.href.indexOf("toolbox.igus.com/?") > -1){
         $('.addthis-smartlayers').css('display','none');
       }
     else if (thisURL !== "http://toolbox.igus.com/"){
@@ -73,20 +71,16 @@ Hubs.onLoad = function() {
       $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
     });
   /* Continuning VIP Paramater Across Links */
-  function getParameterByName(name) {
-    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+  $('a').each(function() {
+  var href = this.href;
+  if (window.location.href.indexOf("vip=yes") > -1){
+    href = href + '?vip=yes';
   }
-  jQuery(document).ready(function ($) {
-    var persistedQueryParam = getParameterByName('vip');
-      if (persistedQueryParam && persistedQueryParam.length > 0) {
-        $('[href]').each(function () {
-        var elem = $(this);
-        var href = elem.attr('href');
-        elem.attr('href', href + (href.indexOf('?') != -1 ? '&' : '?') + 'vip=' + persistedQueryParam);
-        });
-    }
-  });
+  else {
+    href = href + '';
+  }
+  $(this).attr('href', href);
+});
   /* Hiding "Next Flipbook" On VIP Pages */
     hideSlideIn();
   /* Modern Day Rick Roll */
@@ -104,20 +98,16 @@ Hubs.onPageChange = function() {
       $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
     });
   /* Continuning VIP Paramater Across Links */
-  function getParameterByName(name) {
-    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+  $('a').each(function() {
+  var href = this.href;
+  if (window.location.href.indexOf("vip=yes") > -1){
+    href = href + '?vip=yes';
   }
-  jQuery(document).ready(function ($) {
-    var persistedQueryParam = getParameterByName('vip');
-      if (persistedQueryParam && persistedQueryParam.length > 0) {
-        $('[href]').each(function () {
-        var elem = $(this);
-        var href = elem.attr('href');
-        elem.attr('href', href + (href.indexOf('?') != -1 ? '&' : '?') + 'vip=' + persistedQueryParam);
-        });
-    }
-  });
+  else {
+    href = href + '';
+  }
+  $(this).attr('href', href);
+});
   /* Hiding "Next Flipbook" On VIP Pages */
     hideSlideIn();
   /* Modern Day Rick Roll */
@@ -135,20 +125,16 @@ Hubs.onItemsLoaded = function() {
       $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
     });
   /* Continuning VIP Paramater Across Links */
-  function getParameterByName(name) {
-    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+  $('a').each(function() {
+  var href = this.href;
+  if (window.location.href.indexOf("vip=yes") > -1){
+    href = href + '?vip=yes';
   }
-  jQuery(document).ready(function ($) {
-    var persistedQueryParam = getParameterByName('vip');
-      if (persistedQueryParam && persistedQueryParam.length > 0) {
-        $('[href]').each(function () {
-        var elem = $(this);
-        var href = elem.attr('href');
-        elem.attr('href', href + (href.indexOf('?') != -1 ? '&' : '?') + 'vip=' + persistedQueryParam);
-        });
-    }
-  });
+  else {
+    href = href + '';
+  }
+  $(this).attr('href', href);
+});
   /* Hiding "Next Flipbook" On VIP Pages */
     hideSlideIn();
   /* Modern Day Rick Roll */
@@ -169,7 +155,6 @@ var parts = pair.split('=');
     $('.blocking-cta').removeClass('blocking-cta');
     $('.block-cta').remove();
     $('.possible-block').removeClass('possible-block');
-    Hubs.CTAs.expandAfterCta();
 }
 });
 
@@ -187,7 +172,22 @@ var parts = pair.split('=');
    $('.blocking-cta').removeClass('blocking-cta');
    $('.block-cta').remove();
    $('.possible-block').removeClass('possible-block');
-   Hubs.CTAs.expandAfterCta();
 }
 });
-</script>
+
+/* Creating Backup Param */
+var hideWithThisParam = 'igushcta';
+var params = {};
+   $.each(location.search.substr(1).split('&'), $.proxy(function(idx, pair) {
+   if (pair === 'si') return;
+
+var parts = pair.split('=');
+   this[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
+   }, params));
+   $.each(params, function(idx, val){
+   if(idx == hideWithThisParam) {
+   $('.blocking-cta').removeClass('blocking-cta');
+   $('.block-cta').remove();
+   $('.possible-block').removeClass('possible-block');
+}
+});

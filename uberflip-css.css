@@ -1,5 +1,13 @@
 /* DO NOT EDIT -- Hub Permanent Styling -- DO NOT EDIT*/
 
+/* Adding Meta Tags for Google Analytics || IGNORE ERRORS */
+</style>
+<meta name="DCSext.M_Country" content="US">
+<meta name="DCSext.M_Language" content="en">
+<meta name="WT.cg_n" content="Toolbox Content">
+<meta name="WT.cg_s" content="Startpage">
+<style>
+
 /* Changing Favorite Icon*/
 .tile .icon.star{
     position: absolute;
@@ -133,7 +141,6 @@ text-transform: none !important;
     top:0; bottom:0; left:0; right:0;
     z-index:3;
     display: none;
-
 }
 }
 
