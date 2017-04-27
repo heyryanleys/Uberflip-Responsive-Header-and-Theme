@@ -44,7 +44,6 @@ function hideSlideIn() {
 /* Removes AddThis from Homepage, Removes Bottom Icons & Change Icon Colors */
 function changeAddthis() {
   var thisURL = window.location.href
-  document.getElementsByClassName("addthis_internal_container")[0].style.display="none"
   if (thisURL == "http://toolbox.igus.com/") {
     $('.addthis-smartlayers').css('display', 'none');
   } else if (window.location.href.indexOf("toolbox.igus.com/?") > -1) {
