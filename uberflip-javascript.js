@@ -1,3 +1,29 @@
+/* Shows email opt-in for Canada */
+function emailOptIn(){
+  function secondLoop() {
+    if($('.hidden-cta-fields').css('top') == '25px'){
+      $('[data-form-field-id="305859"]').attr("style", "display: none !important");
+        $('[data-mapping="ryan_test"]').attr("style", "display: none !important");
+        clearInterval(second);
+      }
+    }
+      var second = window.setInterval(secondLoop, 200);
+
+    $.get("http://ipinfo.io", function(response) {
+        console.log(response.ip, response.country);
+        if (response.country != 'US') {
+          function firstLoop() {
+            if (document.getElementsByClassName("cta-button-container")[0].style.display = "block") {
+              $('[data-form-field-id="305859"]').attr("style", "display: block !important");
+              $('[data-mapping="ryan_test"]').attr("style", "display: block !important");
+              clearInterval(first);
+            }
+          }
+          var first = window.setInterval(firstLoop, 200);
+        }
+      }, "jsonp");
+    }
+
 /* Adds Arrow CTA */
 function nextArrow() {
   /* Hides Arrow on Page Load*/
@@ -51,6 +77,7 @@ function changeAddthis() {
   } else if (thisURL !== "http://toolbox.igus.com/") {
     /* Changes Colors of AddThis */
     $(window).load(function addthisChange() {
+      document.getElementsByClassName("at-floatingbar-inner")[0].style.display="none";
       document.getElementsByClassName("at-icon-wrapper")[0].style.backgroundColor = "#f58220";
       document.getElementsByClassName("at-icon-wrapper")[1].style.backgroundColor = "#f49849";
       document.getElementsByClassName("at-icon-wrapper")[2].style.backgroundColor = "#fcb476";
@@ -85,6 +112,7 @@ function easterEgg() {
 
 /* Run Fuctions On Page Load */
 Hubs.onLoad = function() {
+  emailOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
@@ -92,9 +120,9 @@ Hubs.onLoad = function() {
   /* Adding Header Navigation */
   imageMapping();
   /* Superscripting Trademarks */
-  $("p,h1,h2,h3,h4,li,a").each(function() {
+  /* $("p,h1,h2,h3,h4,li,a").each(function() {
     $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
-  });
+  }); */
   /* Continuning VIP Paramater Across Links */
   $('a, area').each(function() {
     var href = this.href;
@@ -114,6 +142,7 @@ Hubs.onLoad = function() {
 
 /* Runs Functions When Page Changes*/
 Hubs.onPageChange = function() {
+  emailOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
@@ -121,9 +150,9 @@ Hubs.onPageChange = function() {
   /* Adding Header Navigation */
   imageMapping();
   /* Superscripting Trademarks */
-  $("p,h1,h2,h3,h4,li,a").each(function() {
+  /* $("p,h1,h2,h3,h4,li,a").each(function() {
     $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
-  });
+  }); */
   /* Continuning VIP Paramater Across Links */
   $('a, area').each(function() {
     var href = this.href;
@@ -142,6 +171,7 @@ Hubs.onPageChange = function() {
 
 /* Runs Functions When Items Load */
 Hubs.onItemsLoaded = function() {
+  emailOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
@@ -149,9 +179,9 @@ Hubs.onItemsLoaded = function() {
   /* Adding Header Navigation */
   imageMapping();
   /* Superscripting Trademarks */
-  $("p,h1,h2,h3,h4,li,a").each(function() {
+  /* $("p,h1,h2,h3,h4,li,a").each(function() {
     $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
-  });
+  }); */
   /* Continuning VIP Paramater Across Links */
   $('a, area').each(function() {
     var href = this.href;
