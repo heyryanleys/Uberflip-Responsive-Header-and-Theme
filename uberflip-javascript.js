@@ -108,9 +108,20 @@ function easterEgg() {
   }
 }
 
+function vipYes(){
+  $('a, area').each(function() {
+    var href = this.href;
+    if (window.location.href.indexOf("vip=yes") > -1) {
+      href = href + '?vip=yes';
+    } else {
+      href = href + '';
+    }
+    $(this).attr('href', href);
+  });
+}
+
 /* Run Fuctions On Page Load */
 Hubs.onLoad = function() {
-  emailOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
@@ -122,15 +133,7 @@ Hubs.onLoad = function() {
     $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
   }); */
   /* Continuning VIP Paramater Across Links */
-  $('a, area').each(function() {
-    var href = this.href;
-    if (window.location.href.indexOf("vip=yes") > -1) {
-      href = href + '?vip=yes';
-    } else {
-      href = href + '';
-    }
-    $(this).attr('href', href);
-  });
+  vipYes();
   /* Hiding "Next Flipbook" On VIP Pages */
   hideSlideIn();
   /* Modern Day Rick Roll */
@@ -140,7 +143,6 @@ Hubs.onLoad = function() {
 
 /* Runs Functions When Page Changes*/
 Hubs.onPageChange = function() {
-  emailOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
@@ -152,15 +154,7 @@ Hubs.onPageChange = function() {
     $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
   }); */
   /* Continuning VIP Paramater Across Links */
-  $('a, area').each(function() {
-    var href = this.href;
-    if (window.location.href.indexOf("vip=yes") > -1) {
-      href = href + '?vip=yes';
-    } else {
-      href = href + '';
-    }
-    $(this).attr('href', href);
-  });
+  vipYes();
   /* Hiding "Next Flipbook" On VIP Pages */
   hideSlideIn();
   /* Modern Day Rick Roll */
@@ -169,7 +163,6 @@ Hubs.onPageChange = function() {
 
 /* Runs Functions When Items Load */
 Hubs.onItemsLoaded = function() {
-  emailOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
@@ -181,15 +174,7 @@ Hubs.onItemsLoaded = function() {
     $(this).html($(this).html().replace(/&reg;/gi, '<sup>&reg;</sup>').replace(/®/gi, '<sup>&reg;   </sup>'));
   }); */
   /* Continuning VIP Paramater Across Links */
-  $('a, area').each(function() {
-    var href = this.href;
-    if (window.location.href.indexOf("vip=yes") > -1) {
-      href = href + '?vip=yes';
-    } else {
-      href = href + '';
-    }
-    $(this).attr('href', href);
-  });
+  vipYes();
   /* Hiding "Next Flipbook" On VIP Pages */
   hideSlideIn();
   /* Modern Day Rick Roll */
