@@ -1,22 +1,26 @@
 /* Shows email opt-in for Canada */
-function emailOptIn(){
+/* function emailOptIn(){
+  $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display:none !important");
   function firstLoop(){
     if($('.hidden-cta-fields').css('top') == '25px'){
       $.get("http://ipinfo.io", function(response) {
           console.log(response.ip, response.country);
-          if (response.country != 'US') {
-              $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display: none !important");
+          if (response.country == 'US') {
+            setTimeout(function() {
+              firstLoop()
+                  }, 3);
+              $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display:block !important");
               clearInterval(first);
             }
           else {
-              $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display: none !important");
-              clearInterval(first);
+            $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display:none !important");
+            clearInterval(first);
           }
         }, "jsonp");
       }
     }
     var first = window.setInterval(firstLoop, 200);
-  }
+  }*/
 
 /* Adds Arrow CTA */
 function nextArrow() {
