@@ -5,14 +5,12 @@ function emailOptIn(){
       $.get("http://ipinfo.io", function(response) {
           console.log(response.ip, response.country);
           if (response.country != 'US') {
-              $('[data-form-field-id="305859"]').attr("style", "display: block !important");
-              $('[data-mapping="ryan_test"]').attr("style", "display: block !important");
+              $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display: none !important");
               clearInterval(first);
             }
           else {
-            $('[data-form-field-id="305859"]').attr("style", "display: none !important");
-            $('[data-mapping="ryan_test"]').attr("style", "display: none !important");
-            clearInterval(first);
+              $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display: none !important");
+              clearInterval(first);
           }
         }, "jsonp");
       }
