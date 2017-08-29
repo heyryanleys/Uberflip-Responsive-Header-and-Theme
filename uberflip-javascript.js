@@ -1,28 +1,24 @@
 /* Shows email opt-in for Canada */
 function emailOptIn(){
-  function secondLoop() {
+  function firstLoop(){
     if($('.hidden-cta-fields').css('top') == '25px'){
-      $('[data-form-field-id="305859"]').attr("style", "display: none !important");
-        $('[data-mapping="ryan_test"]').attr("style", "display: none !important");
-        clearInterval(second);
-      }
-    }
-      var second = window.setInterval(secondLoop, 200);
-
-    $.get("http://ipinfo.io", function(response) {
-        console.log(response.ip, response.country);
-        if (response.country != 'US') {
-          function firstLoop() {
-            if (document.getElementsByClassName("cta-button-container")[0].style.display = "block") {
+      $.get("http://ipinfo.io", function(response) {
+          console.log(response.ip, response.country);
+          if (response.country != 'US') {
               $('[data-form-field-id="305859"]').attr("style", "display: block !important");
               $('[data-mapping="ryan_test"]').attr("style", "display: block !important");
               clearInterval(first);
             }
+          else {
+            $('[data-form-field-id="305859"]').attr("style", "display: none !important");
+            $('[data-mapping="ryan_test"]').attr("style", "display: none !important");
+            clearInterval(first);
           }
-          var first = window.setInterval(firstLoop, 200);
-        }
-      }, "jsonp");
+        }, "jsonp");
+      }
     }
+    var first = window.setInterval(firstLoop, 200);
+  }
 
 /* Adds Arrow CTA */
 function nextArrow() {
