@@ -98,7 +98,6 @@ function vipYes(){
 
 
 function canadaOptIn(){
-  console.log("hi")
   if($('.hidden-cta-fields').css('top') == '25px'){
   $.get("http://ipinfo.io", function(response) {
       console.log(response.ip, response.country);
@@ -138,6 +137,7 @@ Hubs.onLoad = function() {
 
 /* Runs Functions When Page Changes*/
 Hubs.onPageChange = function() {
+  canadaOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
@@ -158,6 +158,7 @@ Hubs.onPageChange = function() {
 
 /* Runs Functions When Items Load */
 Hubs.onItemsLoaded = function() {
+  canadaOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
