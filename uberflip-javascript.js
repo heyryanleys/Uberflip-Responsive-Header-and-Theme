@@ -1,27 +1,3 @@
-/* Shows email opt-in for Canada */
-/* function emailOptIn(){
-  $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display:none !important");
-  function firstLoop(){
-    if($('.hidden-cta-fields').css('top') == '25px'){
-      $.get("http://ipinfo.io", function(response) {
-          console.log(response.ip, response.country);
-          if (response.country == 'US') {
-            setTimeout(function() {
-              firstLoop()
-                  }, 3);
-              $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display:block !important");
-              clearInterval(first);
-            }
-          else {
-            $("div span:contains('Stay updated with emails?')").parent('div').attr("style", "display:none !important");
-            clearInterval(first);
-          }
-        }, "jsonp");
-      }
-    }
-    var first = window.setInterval(firstLoop, 200);
-  }*/
-
 /* Adds Arrow CTA */
 function nextArrow() {
   /* Hides Arrow on Page Load*/
@@ -120,8 +96,27 @@ function vipYes(){
   });
 }
 
+
+function canadaOptIn(){
+  console.log("hi")
+  if($('.hidden-cta-fields').css('top') == '25px'){
+  $.get("http://ipinfo.io", function(response) {
+      console.log(response.ip, response.country);
+      if (response.country == 'US') {
+        	$('.cta-field-section.one-line.opt-in-section').hide();
+          $('.opt-in').prop('checked', true);
+          clearInterval(waitingforCTA);
+      }
+   }, "jsonp")
+ }
+   else{
+     setTimeout(canadaOptIn, 200);
+   }
+  }
+
 /* Run Fuctions On Page Load */
 Hubs.onLoad = function() {
+  canadaOptIn();
   /* CTA Arrow for Next Content Slidein */
   nextArrow();
   /* Removing AddThis on Homepage and Changes Icon Colors*/
