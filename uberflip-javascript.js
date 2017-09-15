@@ -179,7 +179,9 @@ Hubs.onItemsLoaded = function() {
 }
 
 /* Creating VIP Param */
-var hideWithThisParam = 'vip';
+var vipParam = 'vip';
+var refParam = 'referral';
+var hctaParam = 'igushcta';
 var params = {};
 $.each(location.search.substr(1).split('&'), $.proxy(function(idx, pair) {
   if (pair === 'yes') return;
@@ -188,43 +190,12 @@ $.each(location.search.substr(1).split('&'), $.proxy(function(idx, pair) {
   this[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
 }, params));
 $.each(params, function(idx, val) {
-  if (idx == hideWithThisParam) {
+  if (idx == vipParam || idx == refParam || idx == hctaParam) {
     $('.blocking-cta').removeClass('blocking-cta');
     $('.block-cta').remove();
     $('.possible-block').removeClass('possible-block');
   }
 });
 
-/* Creating Referral Param */
-var hideWithThisParam = 'referral';
-var params = {};
-$.each(location.search.substr(1).split('&'), $.proxy(function(idx, pair) {
-  if (pair === 'yes') return;
 
-  var parts = pair.split('=');
-  this[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
-}, params));
-$.each(params, function(idx, val) {
-  if (idx == hideWithThisParam) {
-    $('.blocking-cta').removeClass('blocking-cta');
-    $('.block-cta').remove();
-    $('.possible-block').removeClass('possible-block');
-  }
-});
-
-/* Creating Backup Param */
-var hideWithThisParam = 'igushcta';
-var params = {};
-$.each(location.search.substr(1).split('&'), $.proxy(function(idx, pair) {
-  if (pair === 'si') return;
-
-  var parts = pair.split('=');
-  this[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
-}, params));
-$.each(params, function(idx, val) {
-  if (idx == hideWithThisParam) {
-    $('.blocking-cta').removeClass('blocking-cta');
-    $('.block-cta').remove();
-    $('.possible-block').removeClass('possible-block');
-  }
 });
