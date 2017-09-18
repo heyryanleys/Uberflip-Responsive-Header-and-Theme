@@ -196,6 +196,3 @@ $.each(params, function(idx, val) {
     $('.possible-block').removeClass('possible-block');
   }
 });
-
-
-});
