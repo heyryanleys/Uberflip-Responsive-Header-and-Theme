@@ -34,12 +34,7 @@ function imageMapping() {
   }
 }
 
-/* Hides "Next Flipbook" on VIP Pages */
-function hideSlideIn() {
-  if (window.location.href.indexOf("vip=yes") > -1) {
-    document.getElementsByClassName("item-next-prev")[0].style.display = 'none';
-  }
-}
+
 
 /* Removes AddThis from Homepage, Removes Bottom Icons & Change Icon Colors */
 function changeAddthis() {
@@ -113,6 +108,28 @@ function canadaOptIn(){
    }
   }
 
+  /* Creating VIP Param */
+  function vipAction(){
+  var vipParam = 'vip';
+  var refParam = 'referral';
+  var hctaParam = 'igushcta';
+  var params = {};
+  $.each(location.search.substr(1).split('&'), $.proxy(function(idx, pair) {
+    if (pair === 'yes') return;
+
+    var parts = pair.split('=');
+    this[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
+  }, params));
+  $.each(params, function(idx, val) {
+    if (idx == vipParam || idx == refParam || idx == hctaParam) {
+      $('.blocking-cta').removeClass('blocking-cta');
+      $('.block-cta').remove();
+      $('.possible-block').removeClass('possible-block');
+      $('.hide-embed').removeClass('hide-embed');
+    }
+  });
+  }
+
 /* Run Fuctions On Page Load */
 Hubs.onLoad = function() {
   canadaOptIn();
@@ -129,10 +146,10 @@ Hubs.onLoad = function() {
   /* Continuning VIP Paramater Across Links */
   vipYes();
   /* Hiding "Next Flipbook" On VIP Pages */
-  hideSlideIn();
+
   /* Modern Day Rick Roll */
   easterEgg();
-
+  vipAction();
 }
 
 /* Runs Functions When Page Changes*/
@@ -151,9 +168,10 @@ Hubs.onPageChange = function() {
   /* Continuning VIP Paramater Across Links */
   vipYes();
   /* Hiding "Next Flipbook" On VIP Pages */
-  hideSlideIn();
+
   /* Modern Day Rick Roll */
   easterEgg();
+  vipAction();
 }
 
 /* Runs Functions When Items Load */
@@ -172,27 +190,8 @@ Hubs.onItemsLoaded = function() {
   /* Continuning VIP Paramater Across Links */
   vipYes();
   /* Hiding "Next Flipbook" On VIP Pages */
-  hideSlideIn();
+
   /* Modern Day Rick Roll */
   easterEgg();
-
+  vipAction();
 }
-
-/* Creating VIP Param */
-var vipParam = 'vip';
-var refParam = 'referral';
-var hctaParam = 'igushcta';
-var params = {};
-$.each(location.search.substr(1).split('&'), $.proxy(function(idx, pair) {
-  if (pair === 'yes') return;
-
-  var parts = pair.split('=');
-  this[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
-}, params));
-$.each(params, function(idx, val) {
-  if (idx == vipParam || idx == refParam || idx == hctaParam) {
-    $('.blocking-cta').removeClass('blocking-cta');
-    $('.block-cta').remove();
-    $('.possible-block').removeClass('possible-block');
-  }
-});
