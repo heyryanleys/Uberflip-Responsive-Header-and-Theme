@@ -1,0 +1,53 @@
+/* DO NOT EDIT -- Hub Permanent Styling -- DO NOT EDIT*/
+/* Adding Meta Tags for Google Analytics || IGNORE ERRORS */
+</style><meta name="DCSext.M_Country" content="US"><meta name="DCSext.M_Language" content="en"><meta name="WT.cg_n" content="Toolbox Content"><meta name="WT.cg_s" content="Startpage"><style>
+/* Remove Made with Uberflip */
+.powered-by {
+  visibility: hidden;
+}
+/* Removing Pinterest Bug */
+.tile.single.pinterest img {
+  visibility: hidden;
+}
+/* Removing Default Capitalization for H1 Tags */
+h1 {
+  text-transform: none !important;
+}
+/* Top Banner Navigation */
+.large-header {
+  z-index: 2;
+  height: 400px;
+}
+/* Read More CTA*/
+/*Resizing Hero Banner*/
+.large-overlay {
+  opacity: 1;
+  size: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height:348px;
+  overflow: hidden;
+  margin-top:2.5%;
+  display: block;
+}
+
+.large-overlay-text{
+  position: absolute;
+  font-size: 45px;
+  background: #ff7500;
+  color: white;
+  padding: 0px 20px 0px 20px;
+}
+
+.large-overlay-search{
+  position:absolute;
+}
+
+.large-overlay-search input{
+  height:45px;
+  width:500px;
+}
