@@ -31,15 +31,15 @@ h1 {
   z-index: 3;
   height:348px;
   overflow: hidden;
-  margin-top:2.5%;
   display: block;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .large-overlay-text-container{
-  width:100%;
   height:200px;
   background:green;
-  margin: auto;
+  margin: 0 auto;
   padding: 10px;
 
 }
@@ -65,4 +65,23 @@ h1 {
 .large-overlay-search input{
   height:45px;
   width:500px;
+}
+
+.page-aligner{
+  background-color: #eef0ef;
+  max-width: 1500px;
+  -webkit-box-shadow: 0 0 10px 0 #dfdfdf;
+  box-shadow: -8px 0 10px -8px #dfdfdf, 8px 0 10px -8px #dfdfdf;
+  top: -20px;
+  padding-top: 20px;
+
+}
+
+#collection-items > ul {
+  width: 1350px;
+  margin: 0 auto;
+}
+
+#featured-items-heading{
+  display: none;
 }

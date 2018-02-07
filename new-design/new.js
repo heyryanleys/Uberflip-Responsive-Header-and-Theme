@@ -25,3 +25,9 @@ Hubs.onPageChange = function() {
 Hubs.onItemsLoaded = function() {
   imageMapping();
 }
+
+$(document).ready(function() {
+  $(".large-overlay").css({
+    'width': ($(".page-aligner").width() + 'px')
+  });
+});
