@@ -1,6 +1,24 @@
 /* DO NOT EDIT -- Hub Permanent Styling -- DO NOT EDIT*/
 /* Adding Meta Tags for Google Analytics || IGNORE ERRORS */
 </style><meta name="DCSext.M_Country" content="US"><meta name="DCSext.M_Language" content="en"><meta name="WT.cg_n" content="Toolbox Content"><meta name="WT.cg_s" content="Startpage"><style>
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+td, th {
+  padding: 0
+}
+
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
 /* Remove Made with Uberflip */
 .powered-by {
   visibility: hidden;
@@ -68,20 +86,50 @@ h1 {
 }
 
 .page-aligner{
-  background-color: #eef0ef;
-  max-width: 1500px;
-  -webkit-box-shadow: 0 0 10px 0 #dfdfdf;
-  box-shadow: -8px 0 10px -8px #dfdfdf, 8px 0 10px -8px #dfdfdf;
   top: -20px;
   padding-top: 20px;
 
 }
 
 #collection-items > ul {
-  width: 1350px;
   margin: 0 auto;
 }
 
 #featured-items-heading{
   display: none;
+}
+
+.top-nav .page-aligner {
+  margin: 0;
+  width: 100%
+}
+
+
+.main .page-aligner {
+  max-width: 1500px;
+  width: auto!important;
+  background: #eef0ef;
+  -webkit-box-shadow: 0 0 10px 0 #dfdfdf;
+  box-shadow: -8px 0 10px -8px #dfdfdf, 8px 0 10px -8px #dfdfdf;
+}
+
+.page-width.item-level .page-aligner {
+  max-width: 100%
+}
+
+@media (min-width:1620px) {
+  #collection-items>ul {
+    width: 1350px;
+    margin: 0 auto
+  }
+}
+
+@media (max-width:1619px) {
+  #collection-items>ul {
+    width: 100%;
+    margin: 0 auto
+  }
+  .page-width{
+
+  }
 }
