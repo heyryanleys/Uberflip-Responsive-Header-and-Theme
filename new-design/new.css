@@ -119,6 +119,10 @@ body{
   .main .page-aligner {
     margin-top: 8px;
   }
+
+  .hero-text-container{
+    height: 372.688px;
+  }
 }
 
 @media screen and (max-width: 1606px) and (min-width:1337px){
@@ -129,6 +133,9 @@ body{
   }
   .main .page-aligner {
     margin-top: -66px;
+  }
+  .hero-text-container{
+    height: 298.859px;
   }
 }
 
@@ -141,6 +148,9 @@ body{
   .main .page-aligner {
     margin-top: -141px;
   }
+  .hero-text-container{
+    height: 244.484;
+  }
 }
 
 @media screen and (max-width: 860px){
@@ -151,6 +161,9 @@ body{
   }
   .main .page-aligner {
     margin-top: -206px;
+  }
+  .hero-text-container{
+    height: 160.5px;
   }
 }
 
@@ -187,4 +200,8 @@ display: block;
 li.tile.single>a.view{
   background-image: none;
   padding-left: 20px;
+}
+
+input[type=text]:focus{
+  border-color: #ff7500;
 }
