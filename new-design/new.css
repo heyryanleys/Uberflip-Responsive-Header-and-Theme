@@ -21,6 +21,17 @@ body{
   box-shadow: 0 1px 20px rgba(0,0,0,0.05)
 }
 
+.lab_top_menu .top-nav .secondary-logo{
+  padding-left: 20px;
+}
+
+.top-nav .hooked{
+  color: white !important;
+}
+.top-nav .secondary-logo > a {
+  color: white;
+}
+
 .main .page-aligner {
   max-width: 1350px;
   padding-left: 1%;
@@ -141,4 +152,39 @@ body{
   .main .page-aligner {
     margin-top: -206px;
   }
+}
+
+.tile.single.with-img .description h4.long-h3 {
+display: block;
+}
+
+li.tile.single.youtube.stream-1496319.with-img {
+  width: 520px;
+}
+
+li.tile.single.youtube.stream-1496319.with-img img{
+  margin-top:0px !important
+}
+
+#hub-cta-111639 p,
+#hub-cta-111642 p,
+#hub-cta-111645 p{
+  font-weight: bold;
+  margin-top: 0px !important;
+  text-align: left;
+}
+
+.tile:hover{
+  -webkit-box-shadow: 0 0 2.5px 2.5px #ff7500;
+  -moz-box-shadow: 0 0 2.5px 2.5px #ff7500;
+  box-shadow: 0 0 2.5px 2.5px #ff7500;
+}
+
+.tile.single.with-img .description h4.long-h3 {
+display: block;
+}
+
+li.tile.single>a.view{
+  background-image: none;
+  padding-left: 20px;
 }
