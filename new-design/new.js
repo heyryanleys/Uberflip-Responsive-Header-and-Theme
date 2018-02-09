@@ -22,8 +22,15 @@ function secondSearchBar(){
   $("#hero-search-bar").keyup(function(){
       $('[name=q]').val(this.value);
   });
+  // wait for input
+  $("#hero-search-bar").on('keyup', function (e) {
+    if (e.keyCode == 13) {
+      e = jQuery.Event("keyup");
+      e.which = 13 //enter key
+      jQuery('[name=q]').trigger(e);
+    }
+  });
 }
-
 
 Hubs.onLoad = function() {
   swapVideoThumbnail();
