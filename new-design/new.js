@@ -32,19 +32,40 @@ function secondSearchBar(){
   });
 }
 
+function hideSearchBar(){
+  $(document).click(function(e) {
+  if(e.target.class != '.see-more') {
+    $(".search-results-overlay").attr("style", "display:none");
+    $(".search-results-backdrop").attr("style", "display:none");
+    $("#loading-overlay").attr("style","display:none");
+    console.log('hello rleys')
+  }
+});
+}
+
+function hideSearchBarOnPageChange(){
+  $(".search-results-overlay").attr("style", "display:none");
+  $(".search-results-backdrop").attr("style", "display:none");
+  $("#loading-overlay").attr("style","display:none");
+}
+
 Hubs.onLoad = function() {
   swapVideoThumbnail();
   secondSearchBar();
+  hideSearchBar();
 }
 
 /* Runs Functions When Page Changes*/
 Hubs.onPageChange = function() {
   swapVideoThumbnail();
   secondSearchBar();
+  hideSearchBar();
+  hideSearchBarOnPageChange();
 }
 
 /* Runs Functions When Items Load */
 Hubs.onItemsLoaded = function() {
   swapVideoThumbnail();
   secondSearchBar();
+  hideSearchBar();
 }
