@@ -26,7 +26,7 @@
 
 .large-overlay{
   position: absolute;
-  z-index: 5998;
+  z-index: 5997;
   top: 65px;
   width: 100%;
 }
@@ -40,11 +40,28 @@
 }
 
 .page-aligner,
-.hero-image{
+.hero-image,{
   max-width: 1363px;
 }
 
+.hero-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  z-index: 5998;
+  left: 50%;
+}
+
+.hero-text-center-container{
+  display: flex;
+  position: relative;
+  left: -50%;
+  align-items: center;
+}
+
 @media screen and (min-width:1607px) {
+  .hero-text,
   .hero-image{
     width: 1363px;
   }
@@ -54,6 +71,7 @@
 }
 
 @media screen and (max-width: 1606px) and (min-width:1337px){
+  .hero-text,
   .hero-image{
     width: 1093px;
   }
@@ -63,6 +81,7 @@
 }
 
 @media screen and (max-width: 1336px) and (min-width:861px){
+  .hero-text,
   .hero-image{
     width: 821px;
   }
@@ -72,6 +91,7 @@
 }
 
 @media screen and (max-width: 860px){
+  .hero-text,
   .hero-image{
     width: 587px;
   }
