@@ -13,7 +13,7 @@
 }
 
 .page-aligner{
-  z-index: 9999;
+  z-index: 5999;
 }
 
 #featured-items-heading{
@@ -21,16 +21,25 @@
 }
 
 .large-header {
-  background-color: #f9f9f9;
+  background-color: white;
 }
 
 .large-overlay{
   position: absolute;
-  z-index: 9999;
+  z-index: 5998;
   top: 65px;
   width: 100%;
 }
 
+.hero-video{
+  background-color: white;
+}
+
+#hubs-container {
+  background-color: white;
+}
+
+.page-aligner,
 .hero-image{
   max-width: 1363px;
 }
