@@ -5,6 +5,7 @@
 
 body{
   font-family: Helvetica neue;
+  background: white;
 }
 
 .top-nav{
@@ -204,4 +205,13 @@ li.tile.single>a.view{
 
 input[type=text]:focus{
   border-color: #ff7500;
+}
+
+footer {
+  background: #5e5e5e;
+  color: white;
+}
+
+.footer-table{
+  margin-left: 120px;
 }
