@@ -243,9 +243,14 @@ footer {
   background: #5e5e5e;
   height: 65px;
   margin-top: -16px;
+  margin-left: -50px;
   padding-top: 17px;
   padding-left: 15px;
   padding-right: 15px;
+}
+
+{
+    margin-left: -50px;
 }
 
 .custom-menu-item,
@@ -278,4 +283,15 @@ footer {
   padding-bottom: 10px;
   padding-top: 15px !important;
   padding-bottom: 15px !important;
+}
+
+/* Removing Default Capitalization for H1 Tags */
+h1 {
+  text-transform: none !important;
+}
+
+/* Logo styling */
+.top-nav .secondary-logo a img {
+    max-height: 85px;
+    margin-left: -40px;
 }
