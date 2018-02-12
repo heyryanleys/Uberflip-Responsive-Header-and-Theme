@@ -226,3 +226,56 @@ footer {
 .footer-table{
   margin-left: 120px;
 }
+
+/* Menu Headers */
+.top-nav .left-nav.desktop > li > a {
+  font-size: 15px;
+  padding-right: 20px;
+  color: white;
+}
+
+.top-nav .left-nav.desktop > li,
+.top-nav .left-nav.desktop > li.hover{
+  border-radius: 0px;
+}
+
+.top-nav .left-nav.desktop > li{
+  background: #5e5e5e;
+  height: 65px;
+  margin-top: -16px;
+  padding-top: 17px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.custom-menu-item,
+.top-nav .left-nav.desktop > li.hover.has-children{
+  background: gray;
+}
+
+.top-nav .left-nav.desktop > li ul{
+  margin-top: 32px;
+}
+
+.top-nav .left-nav.desktop > li a {
+  border-right: none;
+}
+
+.left-nav > li ul a {
+  border-top: none;
+}
+
+.top-nav .left-nav.desktop > li ul li a{
+  padding: 5px 10px;
+}
+
+.custom-menu-item [target=_top] {
+  pointer-events: none;
+  cursor: default;
+  color: #fb9742;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 10px;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
