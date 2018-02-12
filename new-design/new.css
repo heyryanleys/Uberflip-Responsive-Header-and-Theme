@@ -11,42 +11,41 @@ body{
   background: white;
 }
 
- Styling top
-.top-nav{
-  border-bottom: 1px solid #ececec;
-  -webkit-box-shadow: 0;
-  -moz-box-shadow: 0;
-  box-shadow: 0;
+/* Setting the farthest back background to plain white */
+#hubs-container {
   background-color: white;
 }
 
+ /* Removing default shadows on navigation */
+.top-nav{
+  -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  box-shadow: 0;
+}
+
+/* Adding grey background for the navigation with a light shadow underneath.  1PX padding hides a gap between the navigation and the hero video */
 .page-width .page-aligner{
   background-color: #5e5e5e;
   padding-bottom: 1px;
   box-shadow: 0 1px 20px rgba(0,0,0,0.05)
 }
 
+/* Sets logo and navigation to align with the rest of the site */
 .lab_top_menu .top-nav .secondary-logo{
   padding-left: 20px;
 }
 
+/* Styling dropdown navigation text to be white */
 .top-nav .hooked{
-  color: white !important;
+  color: white
 }
 
-.docs.collapsed.has-children a {
-    color: white !important;
-  }
-
-.docs.collapsed.has-children.hover a{
-  color: #5e5e5e !important;
-}
-
+/* Removing default style where the logo drops to 75% opacity on hover */
 .top-nav .secondary-logo > a {
-  color: white;
   opacity: 1 !important
 }
 
+/* Setting width and positioning for main part of the page, making it light grey with light shadows on the sides */
 .main .page-aligner {
   max-width: 1350px;
   padding-left: 1%;
@@ -54,22 +53,21 @@ body{
   background: #eef0ef;
   -webkit-box-shadow: 0 0 10px 0 #dfdfdf;
   box-shadow: -8px 0 10px -8px #dfdfdf, 8px 0 10px -8px #dfdfdf;
-}
-
-.main .page-aligner{
   z-index: 5999;
   padding-bottom: 0px;
-  box-shadow: 0px;
 }
 
+/* Removing default "Latest Content" text */
 #featured-items-heading{
   display: none;
 }
 
+/* Setting the area behind the video to be white incase of any glitches */
 .large-header {
   background-color: white;
 }
 
+/* Positioning for where the main hero section will go */
 .large-overlay{
   position: absolute;
   z-index: 5997;
@@ -78,23 +76,18 @@ body{
   display: none;
 }
 
-.hero-video{
-  background-color: white;
-}
-
-#hubs-container {
-  background-color: white;
-}
-
+/* Setting with of hero and main section of the site to make sure they're the same width */
 .page-aligner,
 .hero-image,{
-  max-width: 1363px;
+  width: 1363px;
 }
 
+/* Making the hero vidoe grey */
 .hero-image{
   filter: grayscale(100);
 }
 
+/* Styling the "I'm searching for information about [ Plastic Bearings ]" section */
 .hero-text {
   display: flex;
   flex-direction: row;
@@ -105,6 +98,7 @@ body{
   top: 37%;
 }
 
+/* Adding a container around the text and input to center it.  It's 52% because it looked a little off center to me but I'm not sure why*/
 .hero-text-center-container{
   display: flex;
   position: relative;
@@ -112,6 +106,7 @@ body{
   align-items: center;
 }
 
+/* Styling of the "I'm searching for information about" part of the hero-text */
 .hero-text-headline{
   background-color: #ff7500;
   color: white;
@@ -121,24 +116,29 @@ body{
   margin-top: 1px;
 }
 
+/* Styling of the input section within the hero-text */
 .hero-text-center-container input{
   margin-top: 10px;
   border-radius: 0px;
   height:39px;
 }
 
+/* This is a strange uberflip thing, this code needs to be added to show the desciption of the tiles if they've over 27 characters */
 .tile.single.with-img .description h4.long-h3 {
-display: block;
+  display: block;
 }
 
+/* Making the YouTube video on the homepage extra long-- this is only to be done on the homepage */
 li.tile.single.youtube.stream-1496319.with-img {
   width: 520px;
 }
 
+/* Forcing the YouTube thumbnail to fit to the new shape of the tile */
 li.tile.single.youtube.stream-1496319.with-img img{
   margin-top:0px !important
 }
 
+/* Styling the text of the CTAs */
 #hub-cta-111639 p,
 #hub-cta-111642 p,
 #hub-cta-111645 p{
