@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 /* Removing Pinterest Bug */
 .tile.single.pinterest img {
   visibility: hidden;
 }
 
+/* Setting font and background for whole site */
 body{
-  font-family: Helvetica neue;
+  font-family: 'Roboto' sans-serif;
   background: white;
 }
 
+ Styling top
 .top-nav{
   border-bottom: 1px solid #ececec;
   -webkit-box-shadow: 0;
@@ -114,6 +118,7 @@ body{
   font-size: 40px;
   padding: 0px 20px 0px 10px;
   font-weight: 500;
+  margin-top: 1px;
 }
 
 .hero-text-center-container input{
@@ -263,6 +268,14 @@ h1 {
     margin-left: -40px;
 }
 
+/* Footer Link Styling */
+table.footer-table a,
+table.footer-table a:visited,
+table.footer-table a:hover,
+table.footer-table a:active {
+  color: #777777 !important
+}
+
 @media screen and (min-width:1607px) {
   .hero-text,
   .hero-image,
@@ -346,6 +359,16 @@ h1 {
   .flex-footer{
     max-width: 587px;
   }
+  .flex-links,
+  .flex-placeholder{
+    display: none;
+  }
+  .flex-image{
+    text-align: center;
+  }
+  li.tile.single.youtube.stream-1496319.with-img{
+    width: 250px;
+  }
 }
 
 @media screen and (max-width: 560px){
@@ -366,5 +389,15 @@ h1 {
   }
   body.lab_top_menu .top-nav .nav-toggle{
     margin-left: 10px;
+  }
+  .flex-links,
+  .flex-placeholder{
+    display: none;
+  }
+  .flex-image{
+    text-align: center;
+  }
+  li.tile.single.youtube.stream-1496319.with-img{
+    width: 100%;
   }
 }

@@ -24,7 +24,9 @@ function footerPlacement(){
 function swapVideoThumbnail(){
   var oldSrc = 'https://content.cdntwrk.com/mediaproxy?url=https%3A%2F%2Fcontent.cdntwrk.com%2Ffiles%2FaHViPTc1MTM4JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVhN2RkMGQyMDI0NTQucG5nJnZlcnNpb249MDAwMCZzaWc9NjkzYmM2NzM0ZDhmYzJjZTNmMjE3MWQ1MGY2YTUwZTk%25253D&size=1&version=1518196380&sig=b4581426b165fbc49d0c25bbf06eddb4&default=hubs%2Ftilebg-videos.jpg';
   var newSrc = 'https://s14.postimg.org/u5gai92z5/diforange.png';
-  $('img[src="' + oldSrc + '"]').attr('src', newSrc);
+  if ($(window).width() > 860) {
+    $('img[src="' + oldSrc + '"]').attr('src', newSrc);
+  }
 }
 
 function secondSearchBar(){
