@@ -40,6 +40,7 @@ body{
 
 .top-nav .secondary-logo > a {
   color: white;
+  opacity: 1 !important
 }
 
 .main .page-aligner {
@@ -163,19 +164,58 @@ body{
   .hero-text-container{
     height: 244.484;
   }
+  .hero-text-headline{
+    font-size: 25px;
+  }
+  .hero-text-center-container input{
+    height: 20px;
+  }
 }
 
-@media screen and (max-width: 860px){
+@media screen and (max-width: 860px) and (min-width:561px){
   .hero-text,
   .hero-image,
   .page-width .page-aligner{
     width: 587px;
   }
-  .main .page-aligner {
-    margin-top: -206px;
+  .hero-text-headline{
+    display: none;
   }
-  .hero-text-container{
-    height: 160.5px;
+  .hero-text-center-container input{
+    display: none;
+  }
+  .large-overlay{
+    display: none !important;
+  }
+  .top-nav .secondary-logo a img{
+    display: none
+  }
+  .right-side-btns{
+    margin-right: 10px;
+  }
+  body.lab_top_menu .top-nav .nav-toggle{
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 560px){
+  .hero-text-headline{
+    display: none;
+  }
+  .hero-text-center-container input{
+    display: none;
+  }
+  .large-overlay{
+    display: none !important;
+  }
+  .top-nav .secondary-logo a img{
+    display: none
+  }
+  .right-side-btns{
+    margin-right: 10px;
+  }
+  body.lab_top_menu .top-nav .nav-toggle{
+    margin-left: 10px;
   }
 }
 
@@ -223,8 +263,17 @@ footer {
   color: white;
 }
 
-.footer-table{
-  margin-left: 120px;
+.flex-footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100vw;
+  max-width: 1350px;
+}
+
+.flex{
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 /* Menu Headers */
@@ -243,14 +292,13 @@ footer {
   background: #5e5e5e;
   height: 65px;
   margin-top: -16px;
-  margin-left: -50px;
   padding-top: 17px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
-{
-    margin-left: -50px;
+.top-nav .left-nav.desktop > li:first-child{
+  margin-left: -50px;
 }
 
 .custom-menu-item,
