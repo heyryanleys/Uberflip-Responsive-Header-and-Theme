@@ -29,6 +29,15 @@ body{
 .top-nav .hooked{
   color: white !important;
 }
+
+.docs.collapsed.has-children a {
+    color: white !important;
+  }
+
+.docs.collapsed.has-children.hover a{
+  color: #5e5e5e !important;
+}
+
 .top-nav .secondary-logo > a {
   color: white;
 }
@@ -61,6 +70,7 @@ body{
   z-index: 5997;
   top: 65px;
   width: 100%;
+  display: none;
 }
 
 .hero-video{
@@ -119,6 +129,7 @@ body{
   }
   .main .page-aligner {
     margin-top: 8px;
+    padding-bottom: 40px;
   }
 
   .hero-text-container{

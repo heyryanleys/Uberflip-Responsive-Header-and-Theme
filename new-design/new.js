@@ -2,9 +2,21 @@
 function imageOverlay() {
   var thisURL = window.location.href
     if (window.location.href.indexOf("igus.uberflip.com/?") > -1 || thisURL == "https://igus.uberflip.com/") {
-    document.getElementById("custom-hero").style.display = 'block';
+    document.getElementById('custom-hero').style.display = 'block';
   } else {
-    document.getElementById("custom-hero").style.display = 'none';
+    document.getElementById('custom-hero').style.display = 'none';
+    document.getElementsByClassName('page-aligner')[1].style.marginTop = "-25px";
+    document.getElementsByClassName('page-aligner')[1].style.paddingTop = "33px";
+  }
+}
+
+function footerPlacement(){
+  var thisURL = window.location.href
+  var split_url = thisURL.split('/');
+  if (split_url.length > 4) {
+    document.querySelector('footer').style.marginTop = '0px'
+  } else {
+    document.querySelector('footer').style.marginTop = '-25px'
   }
 }
 
@@ -51,6 +63,7 @@ Hubs.onLoad = function() {
   swapVideoThumbnail();
   secondSearchBar();
   hideSearchBar();
+  footerPlacement();
 }
 
 /* Runs Functions When Page Changes*/
@@ -60,6 +73,7 @@ Hubs.onPageChange = function() {
   secondSearchBar();
   hideSearchBar();
   hideSearchBarOnPageChange();
+  footerPlacement();
 }
 
 /* Runs Functions When Items Load */
@@ -68,4 +82,5 @@ Hubs.onItemsLoaded = function() {
   swapVideoThumbnail();
   secondSearchBar();
   hideSearchBar();
+  footerPlacement();
 }
