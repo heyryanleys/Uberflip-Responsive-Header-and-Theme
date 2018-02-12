@@ -16,6 +16,12 @@ body{
   background-color: white;
 }
 
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                             Menu Styles
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
  /* Removing default shadows on navigation */
 .top-nav{
   -webkit-box-shadow: 0;
@@ -40,27 +46,88 @@ body{
   color: white
 }
 
+/* Styling main logo */
+.top-nav .secondary-logo a img {
+    max-height: 85px;
+    margin-left: -40px;
+}
+
 /* Removing default style where the logo drops to 75% opacity on hover */
 .top-nav .secondary-logo > a {
   opacity: 1 !important
 }
 
-/* Setting width and positioning for main part of the page, making it light grey with light shadows on the sides */
-.main .page-aligner {
-  max-width: 1350px;
-  padding-left: 1%;
-  margin-top: -30px;
-  background: #eef0ef;
-  -webkit-box-shadow: 0 0 10px 0 #dfdfdf;
-  box-shadow: -8px 0 10px -8px #dfdfdf, 8px 0 10px -8px #dfdfdf;
-  z-index: 5999;
-  padding-bottom: 0px;
+/* Styling font of menu headers */
+.top-nav .left-nav.desktop > li > a {
+  font-size: 15px;
+  padding-right: 20px;
+  color: white;
 }
 
-/* Removing default "Latest Content" text */
-#featured-items-heading{
-  display: none;
+/* Positioning text of menu headers */
+.top-nav .left-nav.desktop > li{
+  background: #5e5e5e;
+  height: 65px;
+  margin-top: -16px;
+  padding-top: 17px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
+
+/* Removing menu header default border radi */
+.top-nav .left-nav.desktop > li,
+.top-nav .left-nav.desktop > li.hover{
+  border-radius: 0px;
+}
+
+/* Moving the menu to the right so it doesn't overlap with the logo */
+.top-nav .left-nav.desktop > li:first-child{
+  margin-left: -50px;
+}
+
+/* Setting background color of dropdown */
+.custom-menu-item,
+.top-nav .left-nav.desktop > li.hover.has-children{
+  background: gray;
+}
+
+/* Moving dropdown section down so it doesn't overlap with the menu header */
+.top-nav .left-nav.desktop > li ul{
+  margin-top: 32px;
+}
+
+/* Removing default right border on menu header */
+.top-nav .left-nav.desktop > li a {
+  border-right: none;
+}
+
+/* Removing default lines between menu items */
+.left-nav > li ul a {
+  border-top: none;
+}
+
+/* Adjusting spacing between menu itmes */
+.top-nav .left-nav.desktop > li ul li a{
+  padding: 5px 10px;
+}
+
+/* A rough hack to be able to use site links in Uberflip as menu subheaddings-- This isn't ideal but I couldn't find a way within uberflip to have menu subheaddings.  This styles those subheaddings as well */
+.custom-menu-item [target=_top] {
+  pointer-events: none;
+  cursor: default;
+  color: #fb9742;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 10px;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                      Hero Video Styles
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
 
 /* Setting the area behind the video to be white incase of any glitches */
 .large-header {
@@ -82,7 +149,7 @@ body{
   width: 1363px;
 }
 
-/* Making the hero vidoe grey */
+/* Making the hero video grey */
 .hero-image{
   filter: grayscale(100);
 }
@@ -123,6 +190,39 @@ body{
   height:39px;
 }
 
+/* Adding an orange glow to the input when focused */
+input[type=text]:focus{
+  border-color: #ff7500;
+}
+
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                    Main body & tile styling
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
+/* Removing default "Latest Content" text */
+#featured-items-heading{
+  display: none;
+}
+
+/* Removing Default Capitalization for H1 Tags */
+h1 {
+  text-transform: none !important;
+}
+
+/* Setting width and positioning for main part of the page, making it light grey with light shadows on the sides */
+.main .page-aligner {
+  max-width: 1350px;
+  padding-left: 1%;
+  margin-top: -30px;
+  background: #eef0ef;
+  -webkit-box-shadow: 0 0 10px 0 #dfdfdf;
+  box-shadow: -8px 0 10px -8px #dfdfdf, 8px 0 10px -8px #dfdfdf;
+  z-index: 5999;
+  padding-bottom: 0px;
+}
+
 /* This is a strange uberflip thing, this code needs to be added to show the desciption of the tiles if they've over 27 characters */
 .tile.single.with-img .description h4.long-h3 {
   display: block;
@@ -147,25 +247,26 @@ li.tile.single.youtube.stream-1496319.with-img img{
   text-align: left;
 }
 
+/* Adding an orange shadow when tiles are hovered */
 .tile:hover{
   -webkit-box-shadow: 0 0 2.5px 2.5px #ff7500;
   -moz-box-shadow: 0 0 2.5px 2.5px #ff7500;
   box-shadow: 0 0 2.5px 2.5px #ff7500;
 }
 
-.tile.single.with-img .description h4.long-h3 {
-display: block;
-}
-
+/* Removing default icons on the the CTA's on each individual tile */
 li.tile.single>a.view{
   background-image: none;
   padding-left: 20px;
 }
 
-input[type=text]:focus{
-  border-color: #ff7500;
-}
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                       Footer styling
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
 
+/* Basic footer styling */
 footer {
   background: #5e5e5e;
   color: white;
@@ -174,10 +275,12 @@ footer {
   justify-content: center;
 }
 
+/* Removing default margin put in by uberflip */
 .copyright{
   margin: 0px !important;
 }
 
+/* Making sure that the footer stays in line with the navigation and the main content of the website */
 .flex-footer{
   display: flex;
   flex-direction: row;
@@ -186,89 +289,24 @@ footer {
   max-width: 1350px;
 }
 
+/* Spacing each flexbox evenly */
 .flex{
   flex-grow: 1;
   flex-basis: 0;
 }
 
+/* Styling footer image */
 .footer-image{
   max-width: 200px;
   padding-right: 40px;
 }
 
+/* Aligning footer image to right side of flexbox */
 .flex-image{
   text-align: right;
 }
 
-/* Menu Headers */
-.top-nav .left-nav.desktop > li > a {
-  font-size: 15px;
-  padding-right: 20px;
-  color: white;
-}
-
-.top-nav .left-nav.desktop > li,
-.top-nav .left-nav.desktop > li.hover{
-  border-radius: 0px;
-}
-
-.top-nav .left-nav.desktop > li{
-  background: #5e5e5e;
-  height: 65px;
-  margin-top: -16px;
-  padding-top: 17px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.top-nav .left-nav.desktop > li:first-child{
-  margin-left: -50px;
-}
-
-.custom-menu-item,
-.top-nav .left-nav.desktop > li.hover.has-children{
-  background: gray;
-}
-
-.top-nav .left-nav.desktop > li ul{
-  margin-top: 32px;
-}
-
-.top-nav .left-nav.desktop > li a {
-  border-right: none;
-}
-
-.left-nav > li ul a {
-  border-top: none;
-}
-
-.top-nav .left-nav.desktop > li ul li a{
-  padding: 5px 10px;
-}
-
-.custom-menu-item [target=_top] {
-  pointer-events: none;
-  cursor: default;
-  color: #fb9742;
-  font-weight: bold;
-  text-decoration: underline;
-  padding-bottom: 10px;
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
-}
-
-/* Removing Default Capitalization for H1 Tags */
-h1 {
-  text-transform: none !important;
-}
-
-/* Logo styling */
-.top-nav .secondary-logo a img {
-    max-height: 85px;
-    margin-left: -40px;
-}
-
-/* Footer Link Styling */
+/* Styling links in footer*/
 table.footer-table a,
 table.footer-table a:visited,
 table.footer-table a:hover,
@@ -276,127 +314,165 @@ table.footer-table a:active {
   color: #777777 !important
 }
 
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                  Changing styles based on window width
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
 @media screen and (min-width:1607px) {
+  /* Setting width of menu, hero, and main section of website */
   .hero-text,
   .hero-image,
   .page-width .page-aligner{
     width: 1363px;
   }
+  /* Setting height of hero video */
   .main .page-aligner {
     margin-top: 8px;
     padding-bottom: 40px;
   }
-
+  /* Setting height of hero-text */
   .hero-text-container{
     height: 372.688px;
   }
 }
 
 @media screen and (max-width: 1606px) and (min-width:1337px){
+  /* Setting width of menu, hero, and main section of website */
   .hero-text,
   .hero-image,
   .page-width .page-aligner{
     width: 1093px;
   }
+  /* Setting height of hero video */
   .main .page-aligner {
     margin-top: -66px;
   }
+  /* Setting height of hero-text */
   .hero-text-container{
     height: 298.859px;
   }
+  /* Changing footer with-- has to be done with max-width or !important */
   .flex-footer{
     max-width: 1093px;
   }
 }
 
 @media screen and (max-width: 1336px) and (min-width:861px){
+  /* Setting width of menu, hero, and main section of website */
   .hero-text,
   .hero-image,
   .page-width .page-aligner{
     width: 821px;
   }
+  /* Setting height of hero video */
   .main .page-aligner {
     margin-top: -141px;
   }
+  /* Setting height of hero-text */
   .hero-text-container{
     height: 244.484;
   }
+  /* Changing font size of the text on the hero to fit a smaller screen */
   .hero-text-headline{
     font-size: 25px;
   }
+  /* Changing the size of the input to match the text on the hero */
   .hero-text-center-container input{
     height: 20px;
   }
+  /* Changing footer with-- has to be done with max-width or !important */
   .flex-footer{
     max-width: 821px;
   }
 }
 
 @media screen and (max-width: 860px) and (min-width:561px){
+  /* Setting width of menu, hero, and main section of website */
   .hero-text,
   .hero-image,
   .page-width .page-aligner{
     width: 587px;
   }
+  /* Hiding the text on the hero */
   .hero-text-headline{
     display: none;
   }
+  /* Hiding the input on the hero */
   .hero-text-center-container input{
     display: none;
   }
+  /* Hiding the hero*/
   .large-overlay{
     display: none !important;
   }
+  /* Hiding the logo because it is too small to read */
   .top-nav .secondary-logo a img{
     display: none
   }
+  /* Pushing in the search and share button so they're easier to see and click */
   .right-side-btns{
     margin-right: 10px;
   }
+  /* Pushing in the mobile navigation so it's easier to see and click */
   body.lab_top_menu .top-nav .nav-toggle{
     margin-left: 10px;
   }
+  /* Changing footer with-- has to be done with max-width or !important */
   .flex-footer{
     max-width: 587px;
   }
+  /* Hiding links in the footer */
   .flex-links,
   .flex-placeholder{
     display: none;
   }
+  /* Centering image now that there are no more footer links */
   .flex-image{
     text-align: center;
   }
+  /* Making the larger youtube video tile normal size again */
   li.tile.single.youtube.stream-1496319.with-img{
     width: 250px;
   }
 }
 
 @media screen and (max-width: 560px){
+  /* Hiding the text on the hero */
   .hero-text-headline{
     display: none;
   }
+  /* Hiding the input on the hero */
   .hero-text-center-container input{
     display: none;
   }
+  /* Hiding the hero*/
   .large-overlay{
     display: none !important;
   }
+  /* Hiding the logo because it is too small to read */
   .top-nav .secondary-logo a img{
     display: none
   }
+  /* Pushing in the search and share button so they're easier to see and click */
   .right-side-btns{
     margin-right: 10px;
   }
+  /* Pushing in the mobile navigation so it's easier to see and click */
   body.lab_top_menu .top-nav .nav-toggle{
     margin-left: 10px;
   }
+  /* Hiding links in the footer */
   .flex-links,
   .flex-placeholder{
     display: none;
   }
+  /* Centering image now that there are no more footer links */
   .flex-image{
     text-align: center;
   }
+  /* Making the larger youtube video fit the width of the screen like all the other tiles do if the width is < 560px */
   li.tile.single.youtube.stream-1496319.with-img{
     width: 100%;
   }
