@@ -122,103 +122,6 @@ body{
   height:39px;
 }
 
-@media screen and (min-width:1607px) {
-  .hero-text,
-  .hero-image,
-  .page-width .page-aligner{
-    width: 1363px;
-  }
-  .main .page-aligner {
-    margin-top: 8px;
-    padding-bottom: 40px;
-  }
-
-  .hero-text-container{
-    height: 372.688px;
-  }
-}
-
-@media screen and (max-width: 1606px) and (min-width:1337px){
-  .hero-text,
-  .hero-image,
-  .page-width .page-aligner{
-    width: 1093px;
-  }
-  .main .page-aligner {
-    margin-top: -66px;
-  }
-  .hero-text-container{
-    height: 298.859px;
-  }
-}
-
-@media screen and (max-width: 1336px) and (min-width:861px){
-  .hero-text,
-  .hero-image,
-  .page-width .page-aligner{
-    width: 821px;
-  }
-  .main .page-aligner {
-    margin-top: -141px;
-  }
-  .hero-text-container{
-    height: 244.484;
-  }
-  .hero-text-headline{
-    font-size: 25px;
-  }
-  .hero-text-center-container input{
-    height: 20px;
-  }
-}
-
-@media screen and (max-width: 860px) and (min-width:561px){
-  .hero-text,
-  .hero-image,
-  .page-width .page-aligner{
-    width: 587px;
-  }
-  .hero-text-headline{
-    display: none;
-  }
-  .hero-text-center-container input{
-    display: none;
-  }
-  .large-overlay{
-    display: none !important;
-  }
-  .top-nav .secondary-logo a img{
-    display: none
-  }
-  .right-side-btns{
-    margin-right: 10px;
-  }
-  body.lab_top_menu .top-nav .nav-toggle{
-    margin-left: 10px;
-  }
-}
-
-@media screen and (max-width: 560px){
-  .hero-text-headline{
-    display: none;
-  }
-  .hero-text-center-container input{
-    display: none;
-  }
-  .large-overlay{
-    display: none !important;
-  }
-  .top-nav .secondary-logo a img{
-    display: none
-  }
-  .right-side-btns{
-    margin-right: 10px;
-  }
-  body.lab_top_menu .top-nav .nav-toggle{
-    margin-left: 10px;
-  }
-}
-
 .tile.single.with-img .description h4.long-h3 {
 display: block;
 }
@@ -261,6 +164,13 @@ input[type=text]:focus{
 footer {
   background: #5e5e5e;
   color: white;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.copyright{
+  margin: 0px !important;
 }
 
 .flex-footer{
@@ -274,6 +184,15 @@ footer {
 .flex{
   flex-grow: 1;
   flex-basis: 0;
+}
+
+.footer-image{
+  max-width: 200px;
+  padding-right: 40px;
+}
+
+.flex-image{
+  text-align: right;
 }
 
 /* Menu Headers */
@@ -342,4 +261,110 @@ h1 {
 .top-nav .secondary-logo a img {
     max-height: 85px;
     margin-left: -40px;
+}
+
+@media screen and (min-width:1607px) {
+  .hero-text,
+  .hero-image,
+  .page-width .page-aligner{
+    width: 1363px;
+  }
+  .main .page-aligner {
+    margin-top: 8px;
+    padding-bottom: 40px;
+  }
+
+  .hero-text-container{
+    height: 372.688px;
+  }
+}
+
+@media screen and (max-width: 1606px) and (min-width:1337px){
+  .hero-text,
+  .hero-image,
+  .page-width .page-aligner{
+    width: 1093px;
+  }
+  .main .page-aligner {
+    margin-top: -66px;
+  }
+  .hero-text-container{
+    height: 298.859px;
+  }
+  .flex-footer{
+    max-width: 1093px;
+  }
+}
+
+@media screen and (max-width: 1336px) and (min-width:861px){
+  .hero-text,
+  .hero-image,
+  .page-width .page-aligner{
+    width: 821px;
+  }
+  .main .page-aligner {
+    margin-top: -141px;
+  }
+  .hero-text-container{
+    height: 244.484;
+  }
+  .hero-text-headline{
+    font-size: 25px;
+  }
+  .hero-text-center-container input{
+    height: 20px;
+  }
+  .flex-footer{
+    max-width: 821px;
+  }
+}
+
+@media screen and (max-width: 860px) and (min-width:561px){
+  .hero-text,
+  .hero-image,
+  .page-width .page-aligner{
+    width: 587px;
+  }
+  .hero-text-headline{
+    display: none;
+  }
+  .hero-text-center-container input{
+    display: none;
+  }
+  .large-overlay{
+    display: none !important;
+  }
+  .top-nav .secondary-logo a img{
+    display: none
+  }
+  .right-side-btns{
+    margin-right: 10px;
+  }
+  body.lab_top_menu .top-nav .nav-toggle{
+    margin-left: 10px;
+  }
+  .flex-footer{
+    max-width: 587px;
+  }
+}
+
+@media screen and (max-width: 560px){
+  .hero-text-headline{
+    display: none;
+  }
+  .hero-text-center-container input{
+    display: none;
+  }
+  .large-overlay{
+    display: none !important;
+  }
+  .top-nav .secondary-logo a img{
+    display: none
+  }
+  .right-side-btns{
+    margin-right: 10px;
+  }
+  body.lab_top_menu .top-nav .nav-toggle{
+    margin-left: 10px;
+  }
 }
