@@ -10,6 +10,7 @@ function imageOverlay() {
   }
 }
 
+/* Solves a problem where the footer was showing up in the wrong place on content pages.  This function changes the location of the footer on any pages that look like toolbox.com/something/something, which only happens on content level pages */
 function footerPlacement(){
   var thisURL = window.location.href
   var split_url = thisURL.split('/');
@@ -20,7 +21,7 @@ function footerPlacement(){
   }
 }
 
-
+/* Changes the thumbnail out on the homepage for the correct thumbnail-- I'd rather do this in a different way */
 function swapVideoThumbnail(){
   var oldSrc = 'https://content.cdntwrk.com/mediaproxy?url=https%3A%2F%2Fcontent.cdntwrk.com%2Ffiles%2FaHViPTc1MTM4JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVhN2RkMGQyMDI0NTQucG5nJnZlcnNpb249MDAwMCZzaWc9NjkzYmM2NzM0ZDhmYzJjZTNmMjE3MWQ1MGY2YTUwZTk%25253D&size=1&version=1518196380&sig=b4581426b165fbc49d0c25bbf06eddb4&default=hubs%2Ftilebg-videos.jpg';
   var newSrc = 'https://s14.postimg.org/u5gai92z5/diforange.png';
@@ -29,6 +30,7 @@ function swapVideoThumbnail(){
   }
 }
 
+/* Uses the search bar function in the top right hand corner with the search bar on the hero */
 function secondSearchBar(){
   $("#hero-search-bar").keyup(function(){
       $('[name=q]').val(this.value);
@@ -43,23 +45,25 @@ function secondSearchBar(){
   });
 }
 
+/* The search results werent dissapearing after the user clicked outside of the search results.  This function solves that by hiding the search results whenenver something besides "See more" is clicked */
 function hideSearchBar(){
   $(document).click(function(e) {
   if(e.target.class != '.see-more') {
     $(".search-results-overlay").attr("style", "display:none");
     $(".search-results-backdrop").attr("style", "display:none");
     $("#loading-overlay").attr("style","display:none");
-    console.log('hello rleys')
   }
 });
 }
 
+/* This solves another problem with the search bar, this function runs when the page changes to make sure the search results dissapear after they click on a result */
 function hideSearchBarOnPageChange(){
   $(".search-results-overlay").attr("style", "display:none");
   $(".search-results-backdrop").attr("style", "display:none");
   $("#loading-overlay").attr("style","display:none");
 }
 
+/* Runs functions when page loads */
 Hubs.onLoad = function() {
   imageOverlay();
   swapVideoThumbnail();
@@ -68,7 +72,7 @@ Hubs.onLoad = function() {
   footerPlacement();
 }
 
-/* Runs Functions When Page Changes*/
+/* Runs functions when page changes*/
 Hubs.onPageChange = function() {
   imageOverlay();
   swapVideoThumbnail();
@@ -78,7 +82,7 @@ Hubs.onPageChange = function() {
   footerPlacement();
 }
 
-/* Runs Functions When Items Load */
+/* Runs functions when items load */
 Hubs.onItemsLoaded = function() {
   imageOverlay();
   swapVideoThumbnail();
