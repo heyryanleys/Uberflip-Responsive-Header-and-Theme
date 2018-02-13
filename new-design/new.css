@@ -41,11 +41,6 @@ body{
   padding-left: 20px;
 }
 
-/* Styling dropdown navigation text to be white */
-.top-nav .hooked{
-  color: white
-}
-
 /* Styling main logo */
 .top-nav .secondary-logo a img {
     max-height: 85px;
@@ -61,6 +56,13 @@ body{
 .top-nav .left-nav.desktop > li > a {
   font-size: 15px;
   padding-right: 20px;
+}
+
+/* Styling menu headers to always be white */
+.top-nav .left-nav.desktop > li > a,
+.top-nav .left-nav.desktop > li > a:hover,
+.top-nav .left-nav.desktop > li > a:visited,
+.top-nav .left-nav.desktop > li > a:active{
   color: white;
 }
 
@@ -111,11 +113,19 @@ body{
   padding: 5px 10px;
 }
 
+/* Styling dropdown navigation links to always be white */
+.custom-menu-item [data-collection-id*="1"] a,
+.custom-menu-item [data-collection-id*="1"] a:hover,
+.custom-menu-item [data-collection-id*="1"] a:visited,
+.custom-menu-item [data-collection-id*="1"] a:active {
+  color: white;
+}
+
 /* A rough hack to be able to use site links in Uberflip as menu subheaddings-- This isn't ideal but I couldn't find a way within uberflip to have menu subheaddings.  This styles those subheaddings as well */
 .custom-menu-item [target=_top] {
   pointer-events: none;
   cursor: default;
-  color: #fb9742;
+  color: #fb9742 !important;
   font-weight: bold;
   text-decoration: underline;
   padding-bottom: 10px;
