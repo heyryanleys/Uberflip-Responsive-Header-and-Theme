@@ -434,6 +434,10 @@ table.footer-table a:active {
   .large-overlay{
     display: none !important;
   }
+  /* Adding color to the element that was behind the video */
+  .large-header {
+    background-color: #f58220;
+  }
   /* Hiding the logo because it is too small to read */
   .top-nav .secondary-logo a img{
     display: none
@@ -441,6 +445,16 @@ table.footer-table a:active {
   /* Pushing in the search and share button so they're easier to see and click */
   .right-side-btns{
     margin-right: 10px;
+  }
+  /* Setting main section of page to equal the width of the window */
+  body.lab_top_menu .page-aligner{
+    width: 100vw;
+  }
+  body.lab_top_menu .page-width{
+    margin: auto;
+  }
+  body.lab_top_menu .level-two{
+  width: 540px;
   }
   /* Pushing in the mobile navigation so it's easier to see and click */
   body.lab_top_menu .top-nav .nav-toggle{
@@ -478,6 +492,10 @@ table.footer-table a:active {
   .large-overlay{
     display: none !important;
   }
+  /* Adding color to the element that was behind the video */
+  .large-header {
+    background-color: #f58220;
+  }
   /* Hiding the logo because it is too small to read */
   .top-nav .secondary-logo a img{
     display: none
@@ -485,6 +503,16 @@ table.footer-table a:active {
   /* Pushing in the search and share button so they're easier to see and click */
   .right-side-btns{
     margin-right: 10px;
+  }
+  /* Setting main section of page to equal the width of the window */
+  body.lab_top_menu .page-aligner{
+    width: 100vw;
+  }
+  body.lab_top_menu .page-width{
+    margin: auto;
+  }
+  body.lab_top_menu .level-two{
+  width: 540px;
   }
   /* Pushing in the mobile navigation so it's easier to see and click */
   body.lab_top_menu .top-nav .nav-toggle{
