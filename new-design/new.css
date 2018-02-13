@@ -1,4 +1,11 @@
+/* Including Roboto font */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                         General/Misc Styles
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
 
 /* Removing Pinterest Bug */
 .tile.single.pinterest img {
@@ -14,6 +21,26 @@ body{
 /* Setting the farthest back background to plain white */
 #hubs-container {
   background-color: white;
+}
+
+/* Changing Favorite Icon*/
+.tile .icon.star {
+  position: absolute;
+  z-index: 1;
+  transform: scale(.4);
+  top: -4px;
+  right: -4px;
+  border-radius: 6px;
+  opacity: 1;
+}
+
+/* Remove Made with Uberflip */
+.powered-by {
+  visibility: hidden;
+}
+
+.tile.single .description h3{
+  color: #1d1d1d
 }
 
 /*//////////////////////////////////////////////////////////////////////
@@ -204,6 +231,12 @@ input[type=text]:focus{
   border-color: #ff7500;
 }
 
+/* Hiding the text behind the hero-- will be made visiable once hero dissapears on small screens */
+.header-main,
+.header-intro{
+  display: none;
+}
+
 /*//////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
                     Main body & tile styling
@@ -222,14 +255,19 @@ h1 {
 
 /* Setting width and positioning for main part of the page, making it light grey with light shadows on the sides */
 .main .page-aligner {
-  max-width: 1350px;
-  padding-left: 1%;
+  max-width: 1363px;
   margin-top: -30px;
   background: #eef0ef;
   -webkit-box-shadow: 0 0 10px 0 #dfdfdf;
   box-shadow: -8px 0 10px -8px #dfdfdf, 8px 0 10px -8px #dfdfdf;
   z-index: 5999;
   padding-bottom: 0px;
+}
+
+/* Moving the tiles 1% over too make them center */
+ul.clearfix{
+  width: 100%;
+  margin-left: 1%;
 }
 
 /* This is a strange uberflip thing, this code needs to be added to show the desciption of the tiles if they've over 27 characters */
@@ -254,6 +292,7 @@ li.tile.single.youtube.stream-1496319.with-img img{
   font-weight: bold;
   margin-top: 0px !important;
   text-align: left;
+  color: #1d1d1d !important
 }
 
 /* Adding an orange shadow when tiles are hovered */
@@ -448,6 +487,11 @@ table.footer-table a:active {
   .large-overlay{
     display: none !important;
   }
+  /* Making text behind the hero visiable */
+  .header-main,
+  .header-intro{
+    display: block;
+  }
   /* Adding color to the element that was behind the video */
   .large-header {
     background-color: #f58220;
@@ -515,6 +559,11 @@ table.footer-table a:active {
   /* Hiding the hero*/
   .large-overlay{
     display: none !important;
+  }
+  /* Making text behind the hero visiable */
+  .header-main,
+  .header-intro{
+    display: block;
   }
   /* Adding color to the element that was behind the video */
   .large-header {
