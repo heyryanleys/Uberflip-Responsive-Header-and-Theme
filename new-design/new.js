@@ -63,6 +63,17 @@ function hideSearchBarOnPageChange(){
   $("#loading-overlay").attr("style","display:none");
 }
 
+/* Adjust the layout of the menu on content pages (pages that look like toolbox.igus.com/something/something AND don't have a CTA to the side */
+function moveMenuItems(){
+  var thisURL = window.location.href
+  var split_url = thisURL.split('/');
+  if (split_url.length > 4) {
+    document.getElementsByClassName('right-side-btns')[0].style.paddingRight = '20px'
+  } else {
+    document.getElementsByClassName('right-side-btns')[0].style.paddingRight = '0px'
+  }
+}
+
 /* Runs functions when page loads */
 Hubs.onLoad = function() {
   imageOverlay();
@@ -70,6 +81,7 @@ Hubs.onLoad = function() {
   secondSearchBar();
   hideSearchBar();
   footerPlacement();
+  moveMenuItems();
 }
 
 /* Runs functions when page changes*/
@@ -80,6 +92,7 @@ Hubs.onPageChange = function() {
   hideSearchBar();
   hideSearchBarOnPageChange();
   footerPlacement();
+  moveMenuItems();
 }
 
 /* Runs functions when items load */
@@ -89,4 +102,5 @@ Hubs.onItemsLoaded = function() {
   secondSearchBar();
   hideSearchBar();
   footerPlacement();
+  moveMenuItems();
 }

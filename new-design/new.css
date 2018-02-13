@@ -369,6 +369,23 @@ table.footer-table a:active {
   }
 }
 
+@media only screen and (max-width: 1350px){
+  /* CTA my default goes below the flipbooks after 1350px. This hides them completley */
+  .cta-item-container {
+      display: none;
+  }
+  /* Stops the search and share icons from being flush with the edge of the menu */
+  .right-side-btns {
+    padding-right: 20px;
+  }
+
+  /* Keeps the menu lined up with the main part of the page as the page gets smaller */
+  .bread-crumbs.item-level{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media screen and (max-width: 1336px) and (min-width:861px){
   /* Setting width of menu, hero, and main section of website */
   .hero-text,
