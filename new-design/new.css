@@ -87,12 +87,6 @@ body{
   margin-left: -50px;
 }
 
-/* Setting background color of dropdown */
-.custom-menu-item,
-.top-nav .left-nav.desktop > li.hover.has-children{
-  background: gray;
-}
-
 /* Moving dropdown section down so it doesn't overlap with the menu header */
 .top-nav .left-nav.desktop > li ul{
   margin-top: 32px;
@@ -346,6 +340,11 @@ table.footer-table a:active {
   .hero-text-container{
     height: 372.688px;
   }
+  /* Setting background color of dropdown */
+  .custom-menu-item,
+  .top-nav .left-nav.desktop > li.hover.has-children{
+    background: gray;
+  }
 }
 
 @media screen and (max-width: 1606px) and (min-width:1337px){
@@ -366,6 +365,11 @@ table.footer-table a:active {
   /* Changing footer with-- has to be done with max-width or !important */
   .flex-footer{
     max-width: 1093px;
+  }
+  /* Setting background color of dropdown */
+  .custom-menu-item,
+  .top-nav .left-nav.desktop > li.hover.has-children{
+    background: gray;
   }
 }
 
@@ -400,6 +404,11 @@ table.footer-table a:active {
   /* Setting height of hero-text */
   .hero-text-container{
     height: 244.484;
+  }
+  /* Setting background color of dropdown */
+  .custom-menu-item,
+  .top-nav .left-nav.desktop > li.hover.has-children{
+    background: gray;
   }
   /* Changing font size of the text on the hero to fit a smaller screen */
   .hero-text-headline{
@@ -445,6 +454,16 @@ table.footer-table a:active {
   /* Pushing in the search and share button so they're easier to see and click */
   .right-side-btns{
     margin-right: 10px;
+  }
+  /* Hiding arrows on mobile menu */
+  .mobile-nav .overlay-scroller>ul ul li:after,
+  .mobile-share .overlay-scroller>ul ul li:after{
+    display: none;
+  }
+  /* Hiding default house icon on mobile menu */
+  .mobile-nav .overlay-scroller>ul>li:before,
+  .mobile-share>ul>li:before{
+    display: none;
   }
   /* Setting main section of page to equal the width of the window */
   body.lab_top_menu .page-aligner{
@@ -504,6 +523,16 @@ table.footer-table a:active {
   .right-side-btns{
     margin-right: 10px;
   }
+  /* Hiding arrows on mobile menu */
+  .mobile-nav .overlay-scroller>ul ul li:after,
+  .mobile-share .overlay-scroller>ul ul li:after{
+    display: none;
+  }
+  /* Hiding default house icon on mobile menu */
+  .mobile-nav .overlay-scroller>ul>li:before,
+  .mobile-share>ul>li:before{
+    display: none;
+  }
   /* Setting main section of page to equal the width of the window */
   body.lab_top_menu .page-aligner{
     width: 100vw;
@@ -512,7 +541,7 @@ table.footer-table a:active {
     margin: auto;
   }
   body.lab_top_menu .level-two{
-  width: 540px;
+  width: auto;
   }
   /* Pushing in the mobile navigation so it's easier to see and click */
   body.lab_top_menu .top-nav .nav-toggle{
