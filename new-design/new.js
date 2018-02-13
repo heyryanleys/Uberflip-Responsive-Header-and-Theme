@@ -74,6 +74,57 @@ function moveMenuItems(){
   }
 }
 
+/* Creating the ability for you to include '?vip=yes' or '?referral=yes' to the end of a URL to get past the gate on that page without having to fill out your information */
+function bypassGate(){
+  var vipParam = 'vip';
+  var refParam = 'referral';
+  var params = {};
+  $.each(location.search.substr(1).split('&'), $.proxy(function(idx, pair) {
+    if (pair === 'yes') return;
+
+    var parts = pair.split('=');
+    this[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
+  }, params));
+  $.each(params, function(idx, val) {
+    if (idx == vipParam || idx == refParam || idx == hctaParam) {
+      $('.blocking-cta').removeClass('blocking-cta');
+      $('.block-cta').remove();
+      $('.possible-block').removeClass('possible-block');
+      $('.hide-embed').removeClass('hide-embed');
+    }
+  });
+}
+
+/* Makes it so if you are on a page that has 'vip=yes' in it, the paramater '?vip=yes' will get past to the next page you visit.  This is so anyone who bypasses the gates with the VIP paramater doesn't have to do that for every piece of content */
+function vipYesPasser(){
+  $('a, area').each(function() {
+    var href = this.href;
+    if (window.location.href.indexOf("vip=yes") > -1) {
+      href = href + '?vip=yes';
+    } else {
+      href = href + '';
+    }
+    $(this).attr('href', href);
+  });
+}
+
+/* This function hides the email opt in form field when the visitor is coming from the US */
+function canadaOptIn(){
+  if($('.hidden-cta-fields').css('top') == '25px'){
+  $.get("http://ipinfo.io", function(response) {
+      console.log(response.ip, response.country);
+      if (response.country == 'US') {
+        	$('.cta-field-section.one-line.opt-in-section').hide();
+          $('.opt-in').prop('checked', true);
+          clearInterval(waitingforCTA);
+      }
+   }, "jsonp")
+ }
+   else{
+     setTimeout(canadaOptIn, 200);
+   }
+  }
+
 /* Runs functions when page loads */
 Hubs.onLoad = function() {
   imageOverlay();
@@ -82,6 +133,9 @@ Hubs.onLoad = function() {
   hideSearchBar();
   footerPlacement();
   moveMenuItems();
+  bypassGate();
+  vipYesPasser();
+  canadaOptIn();
 }
 
 /* Runs functions when page changes*/
@@ -93,6 +147,9 @@ Hubs.onPageChange = function() {
   hideSearchBarOnPageChange();
   footerPlacement();
   moveMenuItems();
+  bypassGate()
+  vipYesPasser();
+  canadaOptIn();
 }
 
 /* Runs functions when items load */
@@ -103,4 +160,7 @@ Hubs.onItemsLoaded = function() {
   hideSearchBar();
   footerPlacement();
   moveMenuItems();
+  bypassGate();
+  vipYesPasser();
+  canadaOptIn();
 }
