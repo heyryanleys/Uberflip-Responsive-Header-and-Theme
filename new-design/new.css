@@ -66,6 +66,11 @@ body{
   color: white;
 }
 
+/* Styling background of menu headers to stay the same color when selected */
+.top-nav .left-nav.desktop>li.selected>a{
+  background-color: #5e5e5e;
+}
+
 /* Positioning text of menu headers */
 .top-nav .left-nav.desktop > li{
   background: #5e5e5e;
