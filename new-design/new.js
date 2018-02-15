@@ -125,6 +125,42 @@ function canadaOptIn(){
    }
   }
 
+/* Removes AddThis from Homepage, Removes Bottom Icons & Change Icon Colors */
+function changeAddthis() {
+  var thisURL = window.location.href
+  if (thisURL == "http://toolbox.igus.com/") {
+    $('.addthis-smartlayers').css('display', 'none');
+  } else if (window.location.href.indexOf("toolbox.igus.com/?") > -1) {
+    $('.addthis-smartlayers').css('display', 'none');
+  } else if (thisURL !== "http://toolbox.igus.com/") {
+    /* Changes Colors of AddThis */
+    $(window).load(function addthisChange() {
+      document.getElementsByClassName("at-floatingbar-inner")[0].style.display="none";
+      document.getElementsByClassName("at-icon-wrapper")[0].style.backgroundColor = "#f58220";
+      document.getElementsByClassName("at-icon-wrapper")[1].style.backgroundColor = "#f49849";
+      document.getElementsByClassName("at-icon-wrapper")[2].style.backgroundColor = "#fcb476";
+      document.getElementsByClassName("at-icon-wrapper")[3].style.backgroundColor = "#ffcca0";
+      document.getElementsByClassName("at-icon-wrapper")[4].style.backgroundColor = "#f58220";
+      document.getElementsByClassName("at-icon-wrapper")[5].style.backgroundColor = "#f49849";
+      document.getElementsByClassName("at-icon-wrapper")[6].style.backgroundColor = "#fcb476";
+      document.getElementsByClassName("at-icon-wrapper")[7].style.backgroundColor = "#ffcca0";
+    });
+    /* Makes AddThis Div Visiable After Color Change */
+    $(window).load(function() {
+      document.getElementById("at4-share").style.visibility = "visible";
+    });
+    /* Remove Bottom Icons */
+    $(window).load(function() {
+      $(".addthis_toolbox").remove();
+    })
+    /* Shows AddThis */
+    $('.addthis-smartlayers').css('display', 'block');
+  }
+  setTimeout(function() {
+    changeAddthis()
+  }, 3);
+}
+
 /* Runs functions when page loads */
 Hubs.onLoad = function() {
   imageOverlay();
@@ -136,6 +172,7 @@ Hubs.onLoad = function() {
   bypassGate();
   vipYesPasser();
   canadaOptIn();
+  addthisChange();
 }
 
 /* Runs functions when page changes*/
@@ -150,6 +187,7 @@ Hubs.onPageChange = function() {
   bypassGate()
   vipYesPasser();
   canadaOptIn();
+  addthisChange();
 }
 
 /* Runs functions when items load */
@@ -163,4 +201,5 @@ Hubs.onItemsLoaded = function() {
   bypassGate();
   vipYesPasser();
   canadaOptIn();
+  addthisChange();
 }
