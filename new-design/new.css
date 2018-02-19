@@ -162,6 +162,10 @@ body{
   padding-bottom: 15px !important;
 }
 
+/* Setting mobile menu to be on top of everything when selected */
+.mobile-nav, .mobile-share{
+  z-index: 7500;
+}
 /*//////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
                       Hero Video Styles
@@ -256,6 +260,11 @@ h1 {
   text-transform: none !important;
 }
 
+/* Adding a margin for the subheadings */
+.description-block{
+  margin: 3px 0 30px 15px;
+}
+
 /* Setting width and positioning for main part of the page, making it light grey with light shadows on the sides */
 .main .page-aligner {
   max-width: 1363px;
@@ -331,7 +340,8 @@ li.tile.single.youtube.stream-493395.with-img img{
 #hub-cta-69417 p,
 #hub-cta-69375 p,
 #hub-cta-69372 p,
-#hub-cta-69123 p,{
+#hub-cta-67602 p,
+#hub-cta-67599 p{
   font-weight: bold;
   margin-top: 0px !important;
   text-align: left;
