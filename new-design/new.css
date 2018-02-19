@@ -90,8 +90,10 @@ body{
 .top-nav .left-nav.desktop > li > a,
 .top-nav .left-nav.desktop > li > a:hover,
 .top-nav .left-nav.desktop > li > a:visited,
-.top-nav .left-nav.desktop > li > a:active{
-  color: white;
+.top-nav .left-nav.desktop > li > a:active,
+.left-nav > li ul li.selected > a,
+.left-nav > li ul a{
+  color: white !important;
 }
 
 /* Styling background of menu headers to stay the same color when selected */
@@ -289,7 +291,47 @@ li.tile.single.youtube.stream-493395.with-img img{
 /* Styling the text of the CTAs */
 #hub-cta-113145 p,
 #hub-cta-113148 p,
-#hub-cta-113151 p{
+#hub-cta-113151 p,
+#hub-cta-102628 p,
+#hub-cta-100327 p,
+#hub-cta-82243 p,
+#hub-cta-69366 p,
+#hub-cta-69279 p,
+#hub-cta-69276 p,
+#hub-cta-69267 p,
+#hub-cta-69264 p,
+#hub-cta-69261 p,
+#hub-cta-69255 p,
+#hub-cta-69252 p,
+#hub-cta-69249 p,
+#hub-cta-69234 p,
+#hub-cta-69225 p,
+#hub-cta-69222 p,
+#hub-cta-69216 p,
+#hub-cta-67875 p,
+#hub-cta-67872 p,
+#hub-cta-67860 p,
+#hub-cta-67845 p,
+#hub-cta-67470 p,
+#hub-cta-67464 p,
+#hub-cta-67458 p,
+#hub-cta-67440 p,
+#hub-cta-67425 p,
+#hub-cta-67244 p,
+#hub-cta-67419 p,
+#hub-cta-72354 p,
+#hub-cta-69441 p,
+#hub-cta-69438 p,
+#hub-cta-69435 p,
+#hub-cta-69432 p,
+#hub-cta-69429 p,
+#hub-cta-69426 p,
+#hub-cta-69423 p,
+#hub-cta-69420 p,
+#hub-cta-69417 p,
+#hub-cta-69375 p,
+#hub-cta-69372 p,
+#hub-cta-69123 p,{
   font-weight: bold;
   margin-top: 0px !important;
   text-align: left;
