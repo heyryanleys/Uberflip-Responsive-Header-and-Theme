@@ -54,6 +54,7 @@ body{
   -webkit-box-shadow: 0;
   -moz-box-shadow: 0;
   box-shadow: 0;
+  z-index: 6999;
 }
 
 /* Adding grey background for the navigation with a light shadow underneath.  1PX padding hides a gap between the navigation and the hero video */
@@ -276,19 +277,19 @@ ul.clearfix{
 }
 
 /* Making the YouTube video on the homepage extra long-- this is only to be done on the homepage */
-li.tile.single.youtube.stream-1496319.with-img {
+li.tile.single.youtube.stream-493395.with-img {
   width: 520px;
 }
 
 /* Forcing the YouTube thumbnail to fit to the new shape of the tile */
-li.tile.single.youtube.stream-1496319.with-img img{
+li.tile.single.youtube.stream-493395.with-img img{
   margin-top:0px !important
 }
 
 /* Styling the text of the CTAs */
-#hub-cta-111639 p,
-#hub-cta-111642 p,
-#hub-cta-111645 p{
+#hub-cta-113145 p,
+#hub-cta-113148 p,
+#hub-cta-113151 p{
   font-weight: bold;
   margin-top: 0px !important;
   text-align: left;
