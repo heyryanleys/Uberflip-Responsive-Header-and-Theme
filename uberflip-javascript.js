@@ -86,7 +86,7 @@ function bypassGate(){
     this[parts[0]] = parts[1] && decodeURIComponent(parts[1].replace(/\+/g, ' '));
   }, params));
   $.each(params, function(idx, val) {
-    if (idx == vipParam || idx == refParam || idx == hctaParam) {
+    if (idx == vipParam || idx == refParam) {
       $('.blocking-cta').removeClass('blocking-cta');
       $('.block-cta').remove();
       $('.possible-block').removeClass('possible-block');
@@ -129,13 +129,11 @@ function canadaOptIn(){
 /* Removes AddThis from Homepage, Removes Bottom Icons & Change Icon Colors */
 function changeAddthis() {
   var thisURL = window.location.href
-  if (thisURL == "http://toolbox.igus.com/") {
+  if (thisURL == "https://toolbox.igus.com/" || thisURL.indexOf("toolbox.igus.com/?") > -1) {
     $('.addthis-smartlayers').css('display', 'none');
-  } else if (window.location.href.indexOf("toolbox.igus.com/?") > -1) {
-    $('.addthis-smartlayers').css('display', 'none');
-  } else if (thisURL !== "http://toolbox.igus.com/") {
+  } 
+   else {
     /* Changes Colors of AddThis */
-    $(window).load(function addthisChange() {
       document.getElementsByClassName("at-floatingbar-inner")[0].style.display="none";
       document.getElementsByClassName("at-icon-wrapper")[0].style.backgroundColor = "#f58220";
       document.getElementsByClassName("at-icon-wrapper")[1].style.backgroundColor = "#f49849";
@@ -145,7 +143,6 @@ function changeAddthis() {
       document.getElementsByClassName("at-icon-wrapper")[5].style.backgroundColor = "#f49849";
       document.getElementsByClassName("at-icon-wrapper")[6].style.backgroundColor = "#fcb476";
       document.getElementsByClassName("at-icon-wrapper")[7].style.backgroundColor = "#ffcca0";
-    });
     /* Makes AddThis Div Visiable After Color Change */
     $(window).load(function() {
       document.getElementById("at4-share").style.visibility = "visible";
@@ -157,9 +154,6 @@ function changeAddthis() {
     /* Shows AddThis */
     $('.addthis-smartlayers').css('display', 'block');
   }
-  setTimeout(function() {
-    changeAddthis()
-  }, 3);
 }
 
 /* Runs functions when page loads */
@@ -173,7 +167,7 @@ Hubs.onLoad = function() {
   bypassGate();
   vipYesPasser();
   canadaOptIn();
-  addthisChange();
+  changeAddthis();
 }
 
 /* Runs functions when page changes*/
@@ -188,7 +182,7 @@ Hubs.onPageChange = function() {
   bypassGate()
   vipYesPasser();
   canadaOptIn();
-  addthisChange();
+  changeAddthis();
 }
 
 /* Runs functions when items load */
@@ -202,5 +196,5 @@ Hubs.onItemsLoaded = function() {
   bypassGate();
   vipYesPasser();
   canadaOptIn();
-  addthisChange();
+  changeAddthis();
 }
