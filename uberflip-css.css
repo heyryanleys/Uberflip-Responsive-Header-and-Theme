@@ -1,6 +1,28 @@
-/* DO NOT EDIT -- Hub Permanent Styling -- DO NOT EDIT*/
-/* Adding Meta Tags for Google Analytics || IGNORE ERRORS */
-</style><meta name="DCSext.M_Country" content="US"><meta name="DCSext.M_Language" content="en"><meta name="WT.cg_n" content="Toolbox Content"><meta name="WT.cg_s" content="Startpage"><style>
+/* Including Roboto font */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                         General/Misc Styles
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
+/* Removing Pinterest Bug */
+.tile.single.pinterest img {
+  visibility: hidden;
+}
+
+/* Setting font and background for whole site */
+body{
+  font-family: 'Roboto' sans-serif;
+  background: white;
+}
+
+/* Setting the farthest back background to plain white */
+#hubs-container {
+  background-color: white;
+}
+
 /* Changing Favorite Icon*/
 .tile .icon.star {
   position: absolute;
@@ -11,448 +33,729 @@
   border-radius: 6px;
   opacity: 1;
 }
+
 /* Remove Made with Uberflip */
 .powered-by {
   visibility: hidden;
 }
-/* Hiding AddThis While Colors Change */
-.at4-share {
-  visibility: hidden;
+
+.tile.single .description h3{
+  color: #1d1d1d
 }
-/* Removing Pinterest Bug */
-.tile.single.pinterest img {
-  visibility: hidden;
+
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                             Menu Styles
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
+ /* Removing default shadows on navigation */
+.top-nav{
+  -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  box-shadow: 0;
+  z-index: 6999;
 }
-/* Left Binder Tab Navigation */
-@media screen and (min-width: 1200px) {
-  element.style {
-    background-color: rgb(206, 0, 88) !important;
-    color: rgb(255, 255, 255) !important;
-    left: -4px;
-  }
-  .pushcrew-chicklet-position-tl {
-    top: 100px;
-    left: 0;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    transform-origin: bottom left;
-  }
-  .pushcrew-side-button {
-    height: auto!important;
-    position: fixed!important;
-    padding: 10px!important;
-    color: #fff;
-    font-size: 17px!important;
-    font-family: Arial!important;
-    background-color: #4d9de0!important;
-    border-radius: 10px!important;
-    word-spacing: 2px!important;
-    max-width: 250px!important;
-    z-index: 4!important;
-    box-sizing: content box!important;
-    line-height: 1.2!important;
-    cursor: pointer!important;
-    top: 380px !important;
-  }
-  .pushcrew-chicklet-position-tl-2 {
-    top: 100px;
-    left: 0;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    transform-origin: bottom left;
-  }
-  .pushcrew-side-button-2 {
-    height: auto!important;
-    position: fixed!important;
-    padding: 10px!important;
-    color: #fff;
-    font-size: 17px!important;
-    font-family: Arial!important;
-    background-color: #4d9de0!important;
-    border-radius: 10px!important;
-    word-spacing: 2px!important;
-    max-width: 250px!important;
-    z-index: 4!important;
-    box-sizing: content box!important;
-    line-height: 1.2!important;
-    cursor: pointer!important;
-    top: 500px !important;
-  }
-  .pushcrew-chicklet-position-tl-3 {
-    top: 100px;
-    left: 0;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    transform-origin: bottom left;
-  }
-  .pushcrew-side-button-3 {
-    height: auto!important;
-    position: fixed!important;
-    padding: 10px!important;
-    color: #fff;
-    font-size: 17px!important;
-    font-family: Arial!important;
-    background-color: #4d9de0!important;
-    border-radius: 10px!important;
-    word-spacing: 2px!important;
-    max-width: 250px!important;
-    z-index: 4!important;
-    box-sizing: content box!important;
-    line-height: 1.2!important;
-    cursor: pointer!important;
-    top: 631px !important;
-  }
+
+/* Adding grey background for the navigation with a light shadow underneath.  1PX padding hides a gap between the navigation and the hero video */
+.page-width .page-aligner{
+  background-color: #5e5e5e;
+  padding-bottom: 1px;
+  box-shadow: 0 1px 20px rgba(0,0,0,0.05)
 }
+
+/* Sets logo and navigation to align with the rest of the site */
+.lab_top_menu .top-nav .secondary-logo{
+  padding-left: 20px;
+}
+
+/* Styling main logo */
+.top-nav .secondary-logo a img {
+    max-height: 85px;
+    margin-left: -40px;
+}
+
+/* Removing default style where the logo drops to 75% opacity on hover */
+.top-nav .secondary-logo > a {
+  opacity: 1 !important
+}
+
+/* Styling font of menu headers */
+.top-nav .left-nav.desktop > li > a {
+  font-size: 15px;
+  padding-right: 20px;
+}
+
+/* Styling menu headers to always be white */
+.top-nav .left-nav.desktop > li > a,
+.top-nav .left-nav.desktop > li > a:hover,
+.top-nav .left-nav.desktop > li > a:visited,
+.top-nav .left-nav.desktop > li > a:active,
+.left-nav > li ul li.selected > a,
+.left-nav > li ul a{
+  color: white !important;
+}
+
+/* Styling background of menu headers to stay the same color when selected */
+.top-nav .left-nav.desktop>li.selected>a{
+  background-color: #5e5e5e;
+}
+
+/* Positioning text of menu headers */
+.top-nav .left-nav.desktop > li{
+  background: #5e5e5e;
+  height: 65px;
+  margin-top: -16px;
+  padding-top: 17px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Removing menu header default border radi */
+.top-nav .left-nav.desktop > li,
+.top-nav .left-nav.desktop > li.hover{
+  border-radius: 0px;
+}
+
+/* Moving the menu to the right so it doesn't overlap with the logo */
+.top-nav .left-nav.desktop > li:first-child{
+  margin-left: -50px;
+}
+
+/* Moving dropdown section down so it doesn't overlap with the menu header */
+.top-nav .left-nav.desktop > li ul{
+  margin-top: 32px;
+}
+
+/* Removing default right border on menu header */
+.top-nav .left-nav.desktop > li a {
+  border-right: none;
+}
+
+/* Removing default lines between menu items */
+.left-nav > li ul a {
+  border-top: none;
+}
+
+/* Adjusting spacing between menu itmes */
+.top-nav .left-nav.desktop > li ul li a{
+  padding: 5px 10px;
+}
+
+/* Styling dropdown navigation links to always be white */
+.custom-menu-item [data-collection-id*="1"] a,
+.custom-menu-item [data-collection-id*="1"] a:hover,
+.custom-menu-item [data-collection-id*="1"] a:visited,
+.custom-menu-item [data-collection-id*="1"] a:active {
+  color: white;
+}
+
+/* A rough hack to be able to use site links in Uberflip as menu subheaddings-- This isn't ideal but I couldn't find a way within uberflip to have menu subheaddings.  This styles those subheaddings as well */
+.custom-menu-item [target=_top] {
+  pointer-events: none;
+  cursor: default;
+  color: #fb9742 !important;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 10px;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+/* Setting mobile menu to be on top of everything when selected */
+.mobile-nav, .mobile-share{
+  z-index: 7500;
+}
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                      Hero Video Styles
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
+/* Setting the area behind the video to be white incase of any glitches */
+.large-header {
+  background-color: white;
+}
+
+/* Positioning for where the main hero section will go */
+.large-overlay{
+  position: absolute;
+  z-index: 5997;
+  top: 65px;
+  width: 100%;
+  display: none;
+}
+
+/* Setting with of hero and main section of the site to make sure they're the same width */
+.page-aligner,
+.hero-image,{
+  width: 1363px;
+}
+
+/* Making the hero video grey */
+.hero-image{
+  filter: grayscale(100);
+}
+
+/* Styling the "I'm searching for information about [ Plastic Bearings ]" section */
+.hero-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  z-index: 5998;
+  left: 50%;
+  top: 37%;
+}
+
+/* Adding a container around the text and input to center it.  It's 52% because it looked a little off center to me but I'm not sure why*/
+.hero-text-center-container{
+  display: flex;
+  position: relative;
+  left: -52%;
+  align-items: center;
+}
+
+/* Styling of the "I'm searching for information about" part of the hero-text */
+.hero-text-headline{
+  background-color: #ff7500;
+  color: white;
+  font-size: 40px;
+  padding: 0px 20px 0px 10px;
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+/* Styling of the input section within the hero-text */
+.hero-text-center-container input{
+  margin-top: 10px;
+  border-radius: 0px;
+  height:39px;
+}
+
+/* Adding an orange glow to the input when focused */
+input[type=text]:focus{
+  border-color: #ff7500;
+}
+
+/* Hiding the text behind the hero-- will be made visiable once hero dissapears on small screens */
+.header-main,
+.header-intro{
+  display: none;
+}
+
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                    Main body & tile styling
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
+/* Removing default "Latest Content" text */
+#featured-items-heading{
+  display: none;
+}
+
 /* Removing Default Capitalization for H1 Tags */
 h1 {
   text-transform: none !important;
 }
-/* Top Banner Navigation */
-.large-header {
-  z-index: 2;
-  height: 400px;
+
+/* Adding a margin for the subheadings */
+.description-block{
+  margin: 3px 0 30px 15px;
 }
-/* Read More CTA*/
-@media screen and (max-width: 1550px) {
-  .nextup {
+
+/* Setting width and positioning for main part of the page, making it light grey with light shadows on the sides */
+.main .page-aligner {
+  max-width: 1363px;
+  margin-top: -30px;
+  background: #eef0ef;
+  -webkit-box-shadow: 0 0 10px 0 #dfdfdf;
+  box-shadow: -8px 0 10px -8px #dfdfdf, 8px 0 10px -8px #dfdfdf;
+  z-index: 5999;
+  padding-bottom: 0px;
+}
+
+/* Moving the tiles 1% over too make them center */
+ul.clearfix{
+  width: 100%;
+  margin-left: 1%;
+}
+
+/* This is a strange uberflip thing, this code needs to be added to show the desciption of the tiles if they've over 27 characters */
+.tile.single.with-img .description h4.long-h3 {
+  display: block;
+}
+
+/* Making the YouTube video on the homepage extra long-- this is only to be done on the homepage */
+li.tile.single.youtube.stream-493395.with-img {
+  width: 520px;
+}
+
+/* Forcing the YouTube thumbnail to fit to the new shape of the tile */
+li.tile.single.youtube.stream-493395.with-img img{
+  margin-top:0px !important
+}
+
+/* Styling the text of the CTAs */
+#hub-cta-113145 p,
+#hub-cta-113148 p,
+#hub-cta-113151 p,
+#hub-cta-102628 p,
+#hub-cta-100327 p,
+#hub-cta-82243 p,
+#hub-cta-69366 p,
+#hub-cta-69279 p,
+#hub-cta-69276 p,
+#hub-cta-69267 p,
+#hub-cta-69264 p,
+#hub-cta-69261 p,
+#hub-cta-69255 p,
+#hub-cta-69252 p,
+#hub-cta-69249 p,
+#hub-cta-69234 p,
+#hub-cta-69225 p,
+#hub-cta-69222 p,
+#hub-cta-69216 p,
+#hub-cta-67875 p,
+#hub-cta-67872 p,
+#hub-cta-67860 p,
+#hub-cta-67845 p,
+#hub-cta-67470 p,
+#hub-cta-67464 p,
+#hub-cta-67458 p,
+#hub-cta-67440 p,
+#hub-cta-67425 p,
+#hub-cta-67244 p,
+#hub-cta-67419 p,
+#hub-cta-72354 p,
+#hub-cta-69441 p,
+#hub-cta-69438 p,
+#hub-cta-69435 p,
+#hub-cta-69432 p,
+#hub-cta-69429 p,
+#hub-cta-69426 p,
+#hub-cta-69423 p,
+#hub-cta-69420 p,
+#hub-cta-69417 p,
+#hub-cta-69375 p,
+#hub-cta-69372 p,
+#hub-cta-67602 p,
+#hub-cta-67599 p,
+#hub-cta-69495 p,
+#hub-cta-69576 p,
+#hub-cta-69579 p,
+#hub-cta-69582 p,
+#hub-cta-69366 p{
+  font-weight: bold;
+  margin-top: 0px !important;
+  text-align: left;
+  color: #1d1d1d !important
+}
+
+/* Adding an orange shadow when tiles are hovered */
+.tile:hover{
+  -webkit-box-shadow: 0 0 2.5px 2.5px #ff7500;
+  -moz-box-shadow: 0 0 2.5px 2.5px #ff7500;
+  box-shadow: 0 0 2.5px 2.5px #ff7500;
+}
+
+/* Removing default icons on the the CTA's on each individual tile */
+li.tile.single>a.view{
+  background-image: none;
+  padding-left: 20px;
+}
+
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                       Footer styling
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
+/* Basic footer styling */
+footer {
+  background: #5e5e5e;
+  color: white;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+/* Removing default margin put in by uberflip */
+.copyright{
+  margin: 0px !important;
+}
+
+/* Making sure that the footer stays in line with the navigation and the main content of the website */
+.flex-footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100vw;
+  max-width: 1350px;
+}
+
+/* Spacing each flexbox evenly */
+.flex{
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+/* Styling footer image */
+.footer-image{
+  max-width: 200px;
+  padding-right: 40px;
+}
+
+/* Aligning footer image to right side of flexbox */
+.flex-image{
+  text-align: right;
+}
+
+/* Styling links in footer*/
+table.footer-table a,
+table.footer-table a:visited,
+table.footer-table a:hover,
+table.footer-table a:active {
+  color: #777777 !important
+}
+
+/*//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+                  Changing styles based on window width
+////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////*/
+
+@media screen and (min-width:1607px) {
+  /* Setting width of menu, hero, and main section of website */
+  .hero-text,
+  .hero-image,
+  .page-width .page-aligner{
+    width: 1363px;
+  }
+  /* Setting height of hero video */
+  .main .page-aligner {
+    margin-top: 8px;
+    padding-bottom: 40px;
+  }
+  /* Setting height of hero-text */
+  .hero-text-container{
+    height: 372.688px;
+  }
+  /* Setting background color of dropdown */
+  .custom-menu-item,
+  .top-nav .left-nav.desktop > li.hover.has-children{
+    background: gray;
+  }
+}
+
+@media screen and (max-width: 1606px) and (min-width:1337px){
+  /* Setting width of menu, hero, and main section of website */
+  .hero-text,
+  .hero-image,
+  .page-width .page-aligner{
+    width: 1093px;
+  }
+  /* Setting height of hero video */
+  .main .page-aligner {
+    margin-top: -66px;
+  }
+  /* Setting height of hero-text */
+  .hero-text-container{
+    height: 298.859px;
+  }
+  /* Changing footer with-- has to be done with max-width or !important */
+  .flex-footer{
+    max-width: 1093px;
+  }
+  /* Setting background color of dropdown */
+  .custom-menu-item,
+  .top-nav .left-nav.desktop > li.hover.has-children{
+    background: gray;
+  }
+}
+
+@media only screen and (max-width: 1350px){
+  /* CTA my default goes below the flipbooks after 1350px. This hides them completley */
+  .cta-item-container {
+      display: none;
+  }
+  /* Stops the search and share icons from being flush with the edge of the menu */
+  .right-side-btns {
+    padding-right: 20px;
+  }
+
+  /* Keeps the menu lined up with the main part of the page as the page gets smaller */
+  .bread-crumbs.item-level{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 1336px) and (min-width:861px){
+  /* Setting width of menu, hero, and main section of website */
+  .hero-text,
+  .hero-image,
+  .page-width .page-aligner{
+    width: 821px;
+  }
+  /* Setting height of hero video */
+  .main .page-aligner {
+    margin-top: -141px;
+  }
+  /* Setting height of hero-text */
+  .hero-text-container{
+    height: 244.484;
+  }
+  /* Setting background color of dropdown */
+  .custom-menu-item,
+  .top-nav .left-nav.desktop > li.hover.has-children{
+    background: gray;
+  }
+  /* Changing font size of the text on the hero to fit a smaller screen */
+  .hero-text-headline{
+    font-size: 25px;
+  }
+  /* Changing the size of the input to match the text on the hero */
+  .hero-text-center-container input{
+    height: 20px;
+  }
+  /* Changing footer with-- has to be done with max-width or !important */
+  .flex-footer{
+    max-width: 821px;
+  }
+}
+
+@media screen and (max-width: 860px) and (min-width:561px){
+  /* Setting width of menu, hero, and main section of website */
+  .hero-text,
+  .hero-image,
+  .page-width .page-aligner{
+    width: 587px;
+  }
+  /* Hiding the text on the hero */
+  .hero-text-headline{
     display: none;
-    visibility: hidden;
   }
-}
-/*Resizing Hero Banner*/
-@media screen and (min-width: 1450px) {
-  .large-overlay {
-    opacity: 1;
-    size: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 3;
+  /* Hiding the input on the hero */
+  .hero-text-center-container input{
     display: none;
   }
-}
-@media screen and (min-width: 1200px) {
-  .medium-overlay {
-    opacity: 1;
-    size: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    display: none;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .overlay {
+  /* Hiding the hero*/
+  .large-overlay{
     display: none !important;
   }
-  .large-overlay {
-    display: none !important;
+  /* Making text behind the hero visiable */
+  .header-main,
+  .header-intro{
+    display: block;
   }
-  .medium-overlay {
-    display: none !important;
-  }
-  .pushcrew-chicklet-position-tl {
-    display: none !important;
-  }
-  .pushcrew-side-button {
-    display: none !important;
-  }
-  .pushcrew-chicklet-position-tl-2 {
-    display: none !important;
-  }
-  .pushcrew-side-button-2 {
-    display: none !important;
-  }
-  .pushcrew-chicklet-position-tl-3 {
-    display: none !important;
-  }
-  .pushcrew-side-button-3 {
-    display: none !important;
-  }
+  /* Adding color to the element that was behind the video */
   .large-header {
-    height: auto;
+    background-color: #f58220;
+  }
+  /* Hiding the logo because it is too small to read */
+  .top-nav .secondary-logo a img{
+    display: none
+  }
+  /* Pushing in the search and share button so they're easier to see and click */
+  .right-side-btns{
+    margin-right: 10px;
+  }
+  /* Hiding arrows on mobile menu */
+  .mobile-nav .overlay-scroller>ul ul li:after,
+  .mobile-share .overlay-scroller>ul ul li:after{
+    display: none;
+  }
+  /* Hiding default house icon on mobile menu */
+  .mobile-nav .overlay-scroller>ul>li:before,
+  .mobile-share>ul>li:before{
+    display: none;
+  }
+  /* Setting main section of page to equal the width of the window */
+  body.lab_top_menu .page-aligner{
+    width: 100vw;
+  }
+  body.lab_top_menu .page-width{
+    margin: auto;
+  }
+  body.lab_top_menu .level-two{
+  width: 540px;
+  }
+  /* Pushing in the mobile navigation so it's easier to see and click */
+  body.lab_top_menu .top-nav .nav-toggle{
+    margin-left: 10px;
+  }
+  /* Changing footer with-- has to be done with max-width or !important */
+  .flex-footer{
+    max-width: 587px;
+  }
+  /* Hiding links in the footer */
+  .flex-links,
+  .flex-placeholder{
+    display: none;
+  }
+  /* Centering image now that there are no more footer links */
+  .flex-image{
+    text-align: center;
+  }
+  /* Making the larger youtube video tile normal size again */
+  li.tile.single.youtube.stream-1496319.with-img{
+    width: 250px;
   }
 }
-@media screen and (min-width: 1199px) {
-  .primary-logo {
+
+@media screen and (max-width: 560px){
+  /* Hiding the text on the hero */
+  .hero-text-headline{
+    display: none;
+  }
+  /* Hiding the input on the hero */
+  .hero-text-center-container input{
+    display: none;
+  }
+  /* Hiding the hero*/
+  .large-overlay{
     display: none !important;
   }
-  .header-intro {
-    display: none !important;
+  /* Making text behind the hero visiable */
+  .header-main,
+  .header-intro{
+    display: block;
   }
-}
-img[usemap] {
-  border: none;
-  height: auto;
-  max-width: none;
+  /* Adding color to the element that was behind the video */
+  .large-header {
+    background-color: #f58220;
+  }
+  /* Hiding the logo because it is too small to read */
+  .top-nav .secondary-logo a img{
+    display: none
+  }
+  /* Pushing in the search and share button so they're easier to see and click */
+  .right-side-btns{
+    margin-right: 10px;
+  }
+  /* Hiding arrows on mobile menu */
+  .mobile-nav .overlay-scroller>ul ul li:after,
+  .mobile-share .overlay-scroller>ul ul li:after{
+    display: none;
+  }
+  /* Hiding default house icon on mobile menu */
+  .mobile-nav .overlay-scroller>ul>li:before,
+  .mobile-share>ul>li:before{
+    display: none;
+  }
+  /* Setting main section of page to equal the width of the window */
+  body.lab_top_menu .page-aligner{
+    width: 100vw;
+  }
+  body.lab_top_menu .page-width{
+    margin: auto;
+  }
+  body.lab_top_menu .level-two{
   width: auto;
+  }
+  /* Pushing in the mobile navigation so it's easier to see and click */
+  body.lab_top_menu .top-nav .nav-toggle{
+    margin-left: 10px;
+  }
+  /* Hiding links in the footer */
+  .flex-links,
+  .flex-placeholder{
+    display: none;
+  }
+  /* Centering image now that there are no more footer links */
+  .flex-image{
+    text-align: center;
+  }
+  /* Making the larger youtube video fit the width of the screen like all the other tiles do if the width is < 560px */
+  li.tile.single.youtube.stream-1496319.with-img{
+    width: 100%;
+  }
 }
-/*General Subscribe to Newsletter*/
-.run-away.cta-transition[data-cta-id="67164"], .run-away.cta-transition[data-cta-id="67164"]>div.hidden-cta-fields, .run-away.cta-transition[data-cta-id="67164"]>div.run-away {
-  background: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDE1ZDZkYjEyNmQucG5nJnZlcnNpb249MDAwMCZzaWc9MWM5MGIwNTNkN2I5ZDAxOWNlOGYwYzI0NjlmOTQxOWI%253D') center 140px !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box !important;
-  background-size: 70px !important;
-}
-/*Be the first to get plastic bearings in your inbox*/
-.run-away.cta-transition[data-cta-id="67599"], .run-away.cta-transition[data-cta-id="67599"]>div.hidden-cta-fields, .run-away.cta-transition[data-cta-id="67599"]>div.run-away {
-  background: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDE1ZDZkYjEyNmQucG5nJnZlcnNpb249MDAwMCZzaWc9MWM5MGIwNTNkN2I5ZDAxOWNlOGYwYzI0NjlmOTQxOWI%253D') center 140px !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box !important;
-  background-size: 70px !important;
-}
-/*Be the first to get cable news in your inbox*/
-.run-away.cta-transition[data-cta-id="67602"], .run-away.cta-transition[data-cta-id="67602"]>div.hidden-cta-fields, .run-away.cta-transition[data-cta-id="67602"]>div.run-away {
-  background: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDE1ZDZkYjEyNmQucG5nJnZlcnNpb249MDAwMCZzaWc9MWM5MGIwNTNkN2I5ZDAxOWNlOGYwYzI0NjlmOTQxOWI%253D') center 140px !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box !important;
-  background-size: 70px !important;
-}
-/* Hide first tile on sample stream */
-.stream-494757 .tile[data-id="334256646"] {
-  display: none;
-}
-/* Adding Next Item CTA Arrow */
-#arrow {
-  position: fixed;
-  right: 100px;
-  bottom: 200px;
-  display: none;
-}
-/* X for CTA Arrow */
-#closeButton {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-}
-/* CSS For Individual Tiles */
-/* Top 10 Reasons to use composite plastic bearings */
-#hub-cta-69165 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Unsupported vs Gliding Cable Carrier Applications */
-#hub-cta-69168 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Maximizing Shaft and Bearing Lifetimes in Agricultural Machinery */
-#hub-cta-69216 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDE3MThmN2E1MDgucG5nJnZlcnNpb249MDAwMCZzaWc9YzMwZTRlNTFjNDRkOTNjNjI5YTlkODdjY2I3YmZkOWU%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Plastic Bearings Have Staying Power */
-#hub-cta-69222 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDE3MThmN2E1MDgucG5nJnZlcnNpb249MDAwMCZzaWc9YzMwZTRlNTFjNDRkOTNjNjI5YTlkODdjY2I3YmZkOWU%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* drylin E7 Plastic Bearings vs PTFE-lined Plain Bearings */
-#hub-cta-69225 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDE3MThmN2E1MDgucG5nJnZlcnNpb249MDAwMCZzaWc9YzMwZTRlNTFjNDRkOTNjNjI5YTlkODdjY2I3YmZkOWU%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Less is More Approach to Robotic Cable Management */
-#hub-cta-69228 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDE3MThmN2E1MDgucG5nJnZlcnNpb249MDAwMCZzaWc9YzMwZTRlNTFjNDRkOTNjNjI5YTlkODdjY2I3YmZkOWU%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* True Cost of Bearing Lubrication */
-#hub-cta-69234 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDE3MThmN2E1MDgucG5nJnZlcnNpb249MDAwMCZzaWc9YzMwZTRlNTFjNDRkOTNjNjI5YTlkODdjY2I3YmZkOWU%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Lower Drive Force and Friction with Hybrid Linear Bearings */
-#hub-cta-69237 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Caring for Cables */
-#hub-cta-69243 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Convert Rotary to Linear Motion */
-#hub-cta-69246 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* 7 Cable Management Mistakes You Don't Know You're Making */
-#hub-cta-69249 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Cable Distribution Rules You Need to Obey */
-#hub-cta-69252 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* 7 Guidelines for Continuous Flex Cables */
-#hub-cta-69255 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* 3 Methods for Installing a Cable Carrier Vertically */
-#hub-cta-69261 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* 7 Guidelines for Cable Installation */
-#hub-cta-69264 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* The 2-1 Rule and How to Define Fixed/Floating Bearings */
-#hub-cta-69267 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* 3 Tips for Selecting a Linear Slide Table */
-#hub-cta-69276 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* 6 Reasons for Plastic Spherical Bearings */
-#hub-cta-69279 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDEzMTJjYWExYjEuanBnJnZlcnNpb249MDAwMCZzaWc9MmQxYzYxYzQyZmNhNDg2ZWE0YmUxMmEyYjU4MjY5M2U%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/*Contact Sales*/
-#hub-cta-69366 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDI4MDVkNjNlZTMucG5nJnZlcnNpb249MDAwMCZzaWc9Nzg4YmM0ZTNmMTg4MTZhN2I1ZDVlYzk2OWQxOWU2ZWY%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* iglide sample request CTA */
-#hub-cta-69495 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDQwOGIyNjRkMTQucG5nJnZlcnNpb249MDAwMCZzaWc9NjEwMTQ1NjM5MDZhMjRlODAyNDRiMDZlNWQ5MTZmMTA%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* chainflex sample request CTA */
-#hub-cta-69576 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDNmYmEyOWU4NTEucG5nJnZlcnNpb249MDAwMCZzaWc9YzRkNWQ1MWI1MjUwY2I2YjNlNWYyMzZkODg5ZWYyOTg%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* e-chain sample request CTA */
-#hub-cta-69579 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDNmYzM0ZDgwYmUucG5nJnZlcnNpb249MDAwMCZzaWc9N2VlMjY1ZGIzOTFjN2ZhNTg0Zjg5M2MwOGFmN2I2YTI%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* drylin sample request CTA */
-#hub-cta-69582 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZDNmY2UyZDhlMDcucG5nJnZlcnNpb249MDAwMCZzaWc9ZDU3MjFhNmJjZGQ5M2QyYjEwMzZlYmI2ZjkzMzIyYmM%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Want to try chainflex for yourself */
-#hub-cta-67845 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZGViNDZlZWVhNTkucG5nJnZlcnNpb249MDAwMCZzaWc9NjJhYzg1ZDRmMDZjMDI0YWE5YTU4NDc3ZDFkMzU3M2Y%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Want to try iglide for yourself */
-#hub-cta-67860 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZGViNDZlZWVhNTkucG5nJnZlcnNpb249MDAwMCZzaWc9NjJhYzg1ZDRmMDZjMDI0YWE5YTU4NDc3ZDFkMzU3M2Y%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Want to try drylin for yourself */
-#hub-cta-67872 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZGViNDZlZWVhNTkucG5nJnZlcnNpb249MDAwMCZzaWc9NjJhYzg1ZDRmMDZjMDI0YWE5YTU4NDc3ZDFkMzU3M2Y%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
-/* Want to try e-chain for yourself */
-#hub-cta-67875 {
-  background-image: url('https://uberflip.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzU4ZGViNDZlZWVhNTkucG5nJnZlcnNpb249MDAwMCZzaWc9NjJhYzg1ZDRmMDZjMDI0YWE5YTU4NDc3ZDFkMzU3M2Y%253D') !important;
-  background-color: initial !important;
-  background-repeat: no-repeat !important;
-  background-origin: padding-box;
-  background-size: 100%;
-}
+
+  /* Blog post styling */
+  #myimages {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p.subheading {
+    height: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #f58220;
+    display: inline-block;
+    border-top: 2px solid #f58220;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    text-indent: 10px;
+    border-bottom: 2px solid #f58220;
+    width: 500px
+  }
+
+  .igusdownload {
+    height: 40px;
+    width: 100%;
+    background-color: #EAEAEA;
+  }
+
+  .igusdownload table{
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  .igusdownload td{
+    width: 50%;
+    text-align: center;
+    color: #fc8a19;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .igusdownload td:hover{
+    background-color: #DDDDDD;
+    color: #5e5e5e;
+  }
+
+  .igusdownload tr{
+    cursor: pointer;
+  }
+
+  .igusdownload td a{
+    width:100%;display:block;
+  }
+  @media screen and (max-width: 730px){
+    #desktop{
+      display: none;
+    }
+    #mobile{
+      display: block;
+    }
+    #myimages{
+      max-height: 150px;
+    }
+    p.subheading{
+      width: 400px;
+      border-bottom: none;
+    }
+  }
+  @media screen and (min-width: 731px) {
+    #desktop{
+      display: block;
+    }
+    #mobile{
+      display: none;
+    }
+    #myimages{
+      max-height: 250px;
+    }
+    p.subheading{
+      text-indent: 10px;
+			border-bottom: 2px solid #f58220;
+			width: 500px
+    }
+
+  }
