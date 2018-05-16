@@ -1,3 +1,4 @@
+<style>
 /* Including Roboto font */
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
@@ -674,7 +675,6 @@ table.footer-table a:active {
   }
 }
 
-  /* Blog post styling */
   #myimages {
     display: block;
     margin-left: auto;
@@ -759,3 +759,4 @@ table.footer-table a:active {
     }
 
   }
+</style>

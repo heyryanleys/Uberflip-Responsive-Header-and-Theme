@@ -1,3 +1,5 @@
+<script>
+(function($, Hubs, undefined) {
 /* Adds Header Navigation on Homepage Only */
 function imageOverlay() {
   var thisURL = window.location.href
@@ -24,7 +26,7 @@ function footerPlacement(){
 /* Changes the thumbnail out on the homepage for the correct thumbnail-- I'd rather do this in a different way */
 function swapVideoThumbnail(){
   var oldSrc = 'https://content.cdntwrk.com/mediaproxy?url=https%3A%2F%2Fcontent.cdntwrk.com%2Ffiles%2FaHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVhOGIxZmE3MmM2OWYuanBnJnZlcnNpb249MDAwMCZzaWc9ZWRiOThmNTZlMDI3N2I1ODAzNzc4NmE2MDE2NDE3YmI%25253D&size=1&version=1519067047&sig=814b390454840374fcba95b5bca8bd0f&default=hubs%2Ftilebg-videos.jpg';
-  var newSrc = 'https://s14.postimg.org/u5gai92z5/diforange.png';
+  var newSrc = 'https://content.cdntwrk.com/files/aHViPTY2Mzg0JmNtZD1pdGVtZWRpdG9yaW1hZ2UmZmlsZW5hbWU9aXRlbWVkaXRvcmltYWdlXzVhZDUwNDY5ZjMwNjYucG5nJnZlcnNpb249MDAwMCZzaWc9ZmU5OWU0NTNkMDEzYWY5M2RkZjI2NDhmOTZhYmMzNjg%253D';
   if ($(window).width() > 860) {
     $('img[src="' + oldSrc + '"]').attr('src', newSrc);
   }
@@ -110,7 +112,7 @@ function vipYesPasser(){
 
 /* This function hides the email opt in form field when the visitor is coming from the US */
 function canadaOptIn(){
-  if($('..cta.setValues > .fields-revealed').css('top') == '25px'){
+  if($('.cta.setValues > .fields-revealed').css('top') == '25px'){
       console.log('hey');
   $.get("http://ipinfo.io", function(response) {
       console.log(response.ip, response.country);
@@ -131,29 +133,27 @@ function changeAddthis() {
   var thisURL = window.location.href
   if (thisURL == "https://toolbox.igus.com/" || thisURL.indexOf("toolbox.igus.com/?") > -1) {
     $('.addthis-smartlayers').css('display', 'none');
-  } 
-   else {
-    /* Changes Colors of AddThis */
-      document.getElementsByClassName("at-floatingbar-inner")[0].style.display="none";
-      document.getElementsByClassName("at-icon-wrapper")[0].style.backgroundColor = "#f58220";
-      document.getElementsByClassName("at-icon-wrapper")[1].style.backgroundColor = "#f49849";
-      document.getElementsByClassName("at-icon-wrapper")[2].style.backgroundColor = "#fcb476";
-      document.getElementsByClassName("at-icon-wrapper")[3].style.backgroundColor = "#ffcca0";
-      document.getElementsByClassName("at-icon-wrapper")[4].style.backgroundColor = "#f58220";
-      document.getElementsByClassName("at-icon-wrapper")[5].style.backgroundColor = "#f49849";
-      document.getElementsByClassName("at-icon-wrapper")[6].style.backgroundColor = "#fcb476";
-      document.getElementsByClassName("at-icon-wrapper")[7].style.backgroundColor = "#ffcca0";
-    /* Makes AddThis Div Visiable After Color Change */
-    $(window).load(function() {
-      document.getElementById("at4-share").style.visibility = "visible";
-    });
-    /* Remove Bottom Icons */
-    $(window).load(function() {
-      $(".addthis_toolbox").remove();
-    })
-    /* Shows AddThis */
-    $('.addthis-smartlayers').css('display', 'block');
   }
+}
+
+/* Adds Google Analytics Tracking for CTAs */
+function toolboxCTAWrapper(){
+  function toolboxCTA(){
+    if($('.cta.setValues > .fields-revealed').css('top') == '25px'){
+      $('.cta-button').attr({
+        onclick: "dataLayer.push({ 'event' :  'trackEvent', 'eventCategory' : 'Service', 'eventAction' : 'Download', 'eventLabel' : 'Toolbox CTA Submit' })",
+      });
+      clearInterval(toolboxCTATimer)
+    }
+  }
+    var toolboxCTATimer = window.setInterval(toolboxCTA, 2000);
+}
+
+/* Adds Google Analytics Tracking for Download Link */
+function toolboxDownload(){
+  $('.download-pdf').attr({
+    onclick: "dataLayer.push({ 'event' :  'trackEvent', 'eventCategory' : 'Service', 'eventAction' : 'Download', 'eventLabel' : 'Toolbox PDF Download' })",
+  });
 }
 
 /* Runs functions when page loads */
@@ -168,6 +168,8 @@ Hubs.onLoad = function() {
   vipYesPasser();
   canadaOptIn();
   changeAddthis();
+  toolboxCTAWrapper();
+  toolboxDownload();
 }
 
 /* Runs functions when page changes*/
@@ -183,6 +185,8 @@ Hubs.onPageChange = function() {
   vipYesPasser();
   canadaOptIn();
   changeAddthis();
+  toolboxCTAWrapper();
+  toolboxDownload();
 }
 
 /* Runs functions when items load */
@@ -197,4 +201,9 @@ Hubs.onItemsLoaded = function() {
   vipYesPasser();
   canadaOptIn();
   changeAddthis();
+  toolboxCTAWrapper();
+  toolboxDownload();
 }
+
+}(window.jQuery, window.Hubs));
+</script>
